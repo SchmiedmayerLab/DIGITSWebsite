@@ -22,4 +22,4 @@ jobs:
       pull-requests: read
     uses: SchmiedmayerLab/.github/.github/workflows/repository-standards.yml@v0.5
     with:
-      runs_on_labels: '["blacksmith-2vcpu-ubuntu-2404"]'
+      runs_on_labels: '["ubuntu-latest"]'

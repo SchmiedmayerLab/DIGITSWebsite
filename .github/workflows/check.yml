@@ -28,7 +28,7 @@ env:
 jobs:
   security-capabilities:
     name: Detect GitHub Code Security availability
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
       contents: read
@@ -57,7 +57,7 @@ jobs:
 
   quality:
     name: Lint, types, and unit tests
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - name: Check out repository
@@ -96,7 +96,7 @@ jobs:
 
   build:
     name: Build and audit configured deployment
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - name: Check out repository
@@ -117,7 +117,7 @@ jobs:
 
   portability:
     name: Build and audit GitHub project path
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - name: Check out repository
@@ -155,7 +155,7 @@ jobs:
   browser:
     name: Browser and accessibility tests
     needs: [quality, build, portability]
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
       - name: Check out repository
@@ -188,7 +188,7 @@ jobs:
     name: Dependency review
     needs: security-capabilities
     if: ${{ github.event_name == 'pull_request' && needs.security-capabilities.outputs.enabled == 'true' }}
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
       contents: read

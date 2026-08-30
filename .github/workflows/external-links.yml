@@ -20,7 +20,7 @@ permissions:
 jobs:
   links:
     name: Check external website and documentation links
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - name: Check out repository

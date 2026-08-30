@@ -23,7 +23,7 @@ permissions:
 jobs:
   availability:
     name: Detect Pages availability
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
       contents: read
@@ -81,7 +81,7 @@ jobs:
   build:
     name: Build deployment artifact
     needs: validation
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
       contents: read
@@ -120,7 +120,7 @@ jobs:
   deploy:
     name: Deploy
     needs: build
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
       pages: write
@@ -137,7 +137,7 @@ jobs:
     name: Deployment intentionally skipped
     needs: availability
     if: ${{ github.ref != 'refs/heads/main' || needs.availability.outputs.enabled != 'true' }}
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - name: Explain why no deployment was attempted
