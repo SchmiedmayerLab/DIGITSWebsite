@@ -12,4 +12,7 @@ accept = [200, 204, 206, 403, 429]
 exclude_loopback = true
 include_mail = false
 exclude_path = ["node_modules", "dist/pagefind", "LICENSES"]
-exclude = ["^https://lab-name\\.example\\.edu"]
+exclude = [
+  "^https://lab-name\\.example\\.edu",
+  "^https://api\\.reuse\\.software/info/github\\.com/SchmiedmayerLab/DIGITSWebsite$",
+]
