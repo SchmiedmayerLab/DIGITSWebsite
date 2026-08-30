@@ -13,6 +13,7 @@ SPDX-License-Identifier: MIT
 [![Build and Test](https://github.com/SchmiedmayerLab/DIGITSWebsite/actions/workflows/check.yml/badge.svg)](https://github.com/SchmiedmayerLab/DIGITSWebsite/actions/workflows/check.yml)
 [![Deployment](https://github.com/SchmiedmayerLab/DIGITSWebsite/actions/workflows/pages.yml/badge.svg)](https://github.com/SchmiedmayerLab/DIGITSWebsite/actions/workflows/pages.yml)
 [![CodeQL](https://github.com/SchmiedmayerLab/DIGITSWebsite/actions/workflows/codeql.yml/badge.svg)](https://github.com/SchmiedmayerLab/DIGITSWebsite/actions/workflows/codeql.yml)
+[![REUSE status](https://api.reuse.software/badge/github.com/SchmiedmayerLab/DIGITSWebsite)](https://api.reuse.software/info/github.com/SchmiedmayerLab/DIGITSWebsite)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
 
 ![DIGITS — Wearable data that works together.](public/brand/digits-bluesky-banner.png)
