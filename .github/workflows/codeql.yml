@@ -27,7 +27,7 @@ permissions:
 jobs:
   availability:
     name: Detect code scanning availability
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
       contents: read
@@ -63,7 +63,7 @@ jobs:
     name: Analyze JavaScript and TypeScript
     needs: availability
     if: ${{ needs.availability.outputs.enabled == 'true' }}
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
     timeout-minutes: 20
     permissions:
       contents: read
@@ -86,7 +86,7 @@ jobs:
     name: Analysis intentionally skipped
     needs: availability
     if: ${{ needs.availability.outputs.enabled != 'true' }}
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - name: Explain why CodeQL did not run

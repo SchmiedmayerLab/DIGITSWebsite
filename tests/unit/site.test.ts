@@ -46,7 +46,7 @@ describe('deployment paths', () => {
   it('keeps root paths portable', () => {
     expect(withBase('/')).toBe('/');
     expect(withBase('favicon.svg')).toBe('/favicon.svg');
-    expect(absoluteUrl('/')).toBe('https://opendigits.org/');
+    expect(absoluteUrl('/')).toBe('https://opendigits.dev/');
   });
 
   it('defines browser chrome colors for both supported appearances', () => {
