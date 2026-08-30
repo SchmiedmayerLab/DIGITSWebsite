@@ -37,8 +37,9 @@ jobs:
         run: npm run build
         env:
           ASTRO_TELEMETRY_DISABLED: '1'
-          # Lychee resolves root-relative URLs against dist, independent of a Pages project path.
-          SITE_BASE: ''
+          # Audit the currently deployed project URL until a custom domain is configured.
+          SITE_URL: https://schmiedmayerlab.github.io
+          SITE_BASE: /DIGITSWebsite
       - name: Check website and documentation links with retry and cache
         uses: lycheeverse/lychee-action@v2
         with:
