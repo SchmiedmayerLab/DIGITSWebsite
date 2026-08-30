@@ -15,4 +15,5 @@ exclude_path = ["node_modules", "dist/pagefind", "LICENSES"]
 exclude = [
   "^https://lab-name\\.example\\.edu",
   "^https://api\\.reuse\\.software/info/github\\.com/SchmiedmayerLab/DIGITSWebsite$",
+  "^https://schmiedmayerlab\\.github\\.io/DIGITSWebsite(?:/|$)",
 ]
