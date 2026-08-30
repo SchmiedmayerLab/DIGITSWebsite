@@ -12,8 +12,13 @@ accept = [200, 204, 206, 403, 429]
 exclude_loopback = true
 include_mail = false
 exclude_path = ["node_modules", "dist/pagefind", "LICENSES"]
+
+# REUSE compliance is verified by the dedicated organization workflow; its
+# registration page returns HTTP 424 until the public repository is registered.
+# Internal URLs are validated from the built artifact by `npm run test:site`,
+# avoiding flaky network round trips back to the site under test.
 exclude = [
-  "^https://lab-name\\.example\\.edu",
   "^https://api\\.reuse\\.software/info/github\\.com/SchmiedmayerLab/DIGITSWebsite$",
   "^https://schmiedmayerlab\\.github\\.io/DIGITSWebsite(?:/|$)",
+  "^https://(?:www\\.)?opendigits\\.dev(?:/|$)",
 ]

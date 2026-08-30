@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-const deploymentUrl = process.env.SITE_URL ?? 'https://opendigits.org';
+const deploymentUrl = process.env.SITE_URL ?? 'https://opendigits.dev';
 const deploymentBase = process.env.SITE_BASE ?? '';
 
 export const siteConfig = {
