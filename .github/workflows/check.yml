@@ -71,9 +71,9 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci
-      - name: Verify committed brand assets
+      - name: Verify deterministic brand sources
         run: |
-          npm run brand:generate
+          npm run brand:generate:svg
           git diff --exit-code -- public/brand
       - name: Check formatting
         run: npm run format:check
