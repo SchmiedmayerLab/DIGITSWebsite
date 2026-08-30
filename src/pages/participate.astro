@@ -1,0 +1,57 @@
+---
+// SPDX-FileCopyrightText: 2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md)
+// SPDX-License-Identifier: MIT
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../../site.config.mjs';
+---
+
+<BaseLayout
+  title="Participate"
+  description="Connect with DIGITS and help shape practical interoperability for wearable and sensor data in research and AI."
+  canonicalPath={siteConfig.participation.path}
+>
+  <section class="form-hero">
+    <div class="container form-heading">
+      <div>
+        <p class="eyebrow"><span></span> Join DIGITS</p>
+        <h1>Help shape what comes next.</h1>
+      </div>
+      <div class="form-intro">
+        <p>
+          We are bringing together device and platform teams, researchers, clinicians, standards
+          experts, and community partners to make wearable and sensor data work across systems.
+        </p>
+        <p>
+          Tell us briefly who you are and how you would like to contribute. The form takes about two
+          minutes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-section" aria-labelledby="interest-form-title">
+    <div class="container form-shell">
+      <div class="form-shell-header">
+        <div>
+          <p class="eyebrow">Expression of interest</p>
+          <h2 id="interest-form-title">Connect with the consortium.</h2>
+        </div>
+        <p>Please do not include confidential, proprietary, patient, or participant information.</p>
+      </div>
+      <iframe
+        class="notion-form"
+        src={siteConfig.participation.formUrl}
+        title="DIGITS consortium interest form"
+        loading="eager"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+      <p class="form-fallback">
+        If the form does not appear, you can{' '}
+        <a href={siteConfig.participation.formUrl} target="_blank" rel="noreferrer"
+          >open it in a new window <span aria-hidden="true">↗</span></a
+        >.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

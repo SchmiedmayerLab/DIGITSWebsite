@@ -1,0 +1,431 @@
+---
+// SPDX-FileCopyrightText: 2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md)
+// SPDX-License-Identifier: MIT
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DigitsMark from '../components/DigitsMark.astro';
+import {
+  aiPipeline,
+  foundations,
+  goals,
+  governanceGroups,
+  leaders,
+  participation,
+  supportOrganizations,
+  timeline,
+} from '../data/site';
+import { withBase } from '../lib/paths';
+import { siteConfig } from '../../site.config.mjs';
+
+const institutions = [
+  {
+    name: 'Beth Israel Deaconess Medical Center',
+    href: 'https://www.bidmc.org/',
+    logo: '/images/institutions/bidmc.svg',
+  },
+  {
+    name: 'Harvard University',
+    href: 'https://www.harvard.edu/',
+    logo: '/images/institutions/harvard.svg',
+  },
+  {
+    name: 'Stanford University',
+    href: 'https://www.stanford.edu/',
+    logo: '/images/institutions/stanford-university.svg',
+  },
+  {
+    name: 'Stanford Medicine',
+    href: 'https://med.stanford.edu/',
+    logo: '/images/institutions/stanford-medicine.svg',
+  },
+  {
+    name: 'American Psychiatric Association',
+    href: 'https://www.psychiatry.org/',
+    logo: '/images/institutions/apa.svg',
+  },
+] as const;
+---
+
+<BaseLayout>
+  <section id="top" class="hero">
+    <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
+    <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> Across devices · platforms · vendors</p>
+        <h1>Interoperable sensor data for research and AI.</h1>
+        <p class="hero-summary">
+          DIGITS brings researchers, clinicians, standards experts, and technology partners together
+          to make wearable and smartphone data portable, interpretable, and ready for large-scale
+          medical research.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href={withBase(siteConfig.participation.path)}>Join the consortium</a>
+          <a class="text-link" href="#approach"
+            >See the approach <span aria-hidden="true">↓</span></a
+          >
+        </div>
+        <ul class="hero-principles" role="list" aria-label="DIGITS principles">
+          <li>Build on existing standards</li>
+          <li>Co-designed across sectors</li>
+          <li>Validated in practice</li>
+        </ul>
+      </div>
+
+      <div
+        class="hero-system"
+        aria-label="Device and sensor data flow through the DIGITS interoperability layer into research and AI uses"
+      >
+        <p class="system-label">Device and sensor data in</p>
+        <div class="signal-stack">
+          <div class="signal-card">
+            <span class="signal-pulse"></span><strong>Wearables</strong>
+          </div>
+          <div class="signal-card">
+            <span class="signal-pulse"></span><strong>Smartphones</strong>
+          </div>
+          <div class="signal-card">
+            <span class="signal-pulse"></span><strong>Research sensors</strong>
+          </div>
+        </div>
+        <div class="system-flow" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="open-core">
+          <DigitsMark compact />
+          <span class="core-label">Practical interoperability</span>
+          <strong>Map · profile · validate</strong>
+          <small>Building on established standards</small>
+        </div>
+        <div class="system-flow flow-out" aria-hidden="true"><i></i><i></i><i></i></div>
+        <p class="system-label system-label-out">Research-ready data out</p>
+        <div class="outcome-grid">
+          <span>Multi-site research</span>
+          <span>Multimodal AI</span>
+          <span>Agentic systems</span>
+          <span>Clinical evidence</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="institution-band" aria-labelledby="institutions-title">
+    <div class="container">
+      <h2 id="institutions-title" class="visually-hidden">
+        Institutions contributing leadership and stewardship
+      </h2>
+      <div class="institution-grid">
+        {
+          institutions.map((institution) => (
+            <a href={institution.href} class="institution-lockup" aria-label={institution.name}>
+              <img src={withBase(institution.logo)} alt={institution.name} loading="eager" />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="approach" class="section ai-section">
+    <div class="container split-heading ai-heading">
+      <div>
+        <p class="eyebrow eyebrow-light">The shared data foundation</p>
+        <h2>Interoperability makes medical AI possible at scale.</h2>
+      </div>
+      <div>
+        <p>
+          DIGITS aims to make sensor data comparable and traceable across devices, software
+          versions, and studies—helping researchers assemble larger longitudinal cohorts and
+          evaluate AI across real-world populations.
+        </p>
+        <p class="ai-caveat">
+          A shared data layer opens the door to multimodal models and agentic health applications
+          that can be developed, tested, and reproduced responsibly.
+        </p>
+      </div>
+    </div>
+    <div class="container foundation-strip" aria-label="Existing standards DIGITS builds on">
+      <span>Building on</span>
+      {foundations.map((foundation) => <strong>{foundation}</strong>)}
+    </div>
+    <div class="container position-statement position-statement-dark">
+      <span class="position-mark" aria-hidden="true">≠</span>
+      <p>
+        <strong>DIGITS is not another competing standard.</strong> It connects and extends established
+        foundations with the profiles, mappings, adapters, validation tools, and implementation evidence
+        needed for research use.
+      </p>
+    </div>
+    <ol class="container ai-pipeline">
+      {
+        aiPipeline.map((stage, index) => (
+          <li>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <strong>{stage.label}</strong>
+            <p>{stage.detail}</p>
+          </li>
+        ))
+      }
+    </ol>
+    <div class="container ai-outcomes" aria-label="Potential research outcomes">
+      <span>Cross-device digital biomarkers</span>
+      <span>Generalizable multimodal models</span>
+      <span>Reproducible agent evaluation</span>
+      <span>Privacy-aware real-world research</span>
+    </div>
+  </section>
+
+  <section id="goals" class="section goals-section">
+    <div class="container">
+      <div class="split-heading section-heading">
+        <div>
+          <p class="eyebrow eyebrow-light">Five connected goals</p>
+          <h2>Turn existing standards into shared research infrastructure.</h2>
+        </div>
+        <p class="body-large">
+          DIGITS is supported by the National Institute of Mental Health through the NIH initiative{
+            ' '
+          }
+          <a href="https://grants.nih.gov/grants/guide/pa-files/PAR-24-250.html"
+            >Standardizing Data and Metadata from Wearable Devices (PAR-24-250)</a
+          >. The work combines community governance, landscape assessment, implementation,
+          validation, adoption support, and long-term stewardship.
+        </p>
+      </div>
+      <div class="goal-list">
+        {
+          goals.map((goal) => (
+            <article class="goal-card">
+              <span class="goal-number">{goal.number}</span>
+              <div>
+                <>
+                  <span class="goal-verb">{goal.verb}</span>
+                  <h3>{goal.title}</h3>
+                </>
+              </div>
+              <p>{goal.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="consortium" class="section governance-section">
+    <div class="container split-heading section-heading governance-heading">
+      <div>
+        <p class="eyebrow">How the consortium is organized</p>
+        <h2>Decisions shaped by clinical, technical, industry, and community expertise.</h2>
+      </div>
+      <p class="body-large">
+        The proposed structure combines accountable leadership, independent ethical review, a
+        representative consortium, and focused working groups where implementation work happens.
+      </p>
+    </div>
+    <div class="container governance-map" aria-label="DIGITS proposed governance structure">
+      <div class="governance-board governance-node">
+        <span>Strategic leadership</span>
+        <strong>Governance Board</strong>
+        <p>Clinical · informatics · industry co-chairs</p>
+      </div>
+      <div class="governance-branch" aria-hidden="true"></div>
+      <div class="governance-middle">
+        <div class="governance-node advisory-node">
+          <span>Independent oversight</span><strong>Ethical Advisory Board</strong><p>
+            8–12 members
+          </p>
+        </div>
+        <div class="governance-node consortium-node">
+          <span>Deliberative body</span><strong>Consortium</strong><p>Target: 40–50 members</p>
+        </div>
+      </div>
+      <div class="governance-groups">
+        {
+          governanceGroups.map((group) => (
+            <article>
+              <>
+                <span>Working group</span>
+                <strong>{group.name}</strong>
+                <p>{group.detail}</p>
+              </>
+            </article>
+          ))
+        }
+      </div>
+      <p class="governance-note">
+        Working groups are expected to include 6–10 members, operate against defined deliverables,
+        and report into the Governance Board. Additional groups can be chartered as priorities
+        evolve.
+      </p>
+    </div>
+  </section>
+
+  <section id="team" class="section team-section">
+    <div class="container">
+      <div class="split-heading section-heading">
+        <div>
+          <p class="eyebrow eyebrow-light">Founding leadership</p>
+          <h2>Clinical, informatics, and industry leaders working as one team.</h2>
+        </div>
+        <p class="body-large">
+          The founding co-chairs connect clinical priorities, implementation expertise, and the
+          realities of device and platform development from the outset.
+        </p>
+      </div>
+      <div class="leader-grid">
+        {
+          leaders.map((leader) => (
+            <article class="leader-card">
+              <img
+                src={withBase(leader.image)}
+                alt={leader.imageAlt}
+                width="350"
+                height="350"
+                loading="eager"
+                style={`object-position: ${leader.imagePosition}`}
+              />
+              <div class="leader-copy">
+                <span class="leader-role">{leader.role}</span>
+                <h3>{leader.name}</h3>
+                <p>{leader.affiliation}</p>
+                {leader.profile && (
+                  <a href={leader.profile}>
+                    View profile <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+      <div class="stewardship-card">
+        <div class="stewardship-logo">
+          <img
+            src={withBase('/images/institutions/apa.svg')}
+            alt="American Psychiatric Association"
+            loading="eager"
+          />
+        </div>
+        <div>
+          <span>Long-term stewardship partner</span>
+          <strong>A durable home for community-led interoperability</strong>
+        </div>
+        <p>
+          The American Psychiatric Association will help provide a lasting home for specifications,
+          training, governance, and continued adoption beyond the initial award.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="support-section" aria-labelledby="support-title">
+    <div class="container split-heading section-heading support-heading">
+      <div>
+        <p class="eyebrow" id="support-title">An expanding network</p>
+        <h2>Support from across the wearable-data ecosystem.</h2>
+      </div>
+      <p class="body-large">
+        Leaders affiliated with these organizations provided letters of support for the original
+        grant submission. DIGITS is growing that early network into a broader consortium spanning
+        devices, platforms, research, healthcare, standards, advocacy, and publishing.
+      </p>
+    </div>
+    <div
+      class="support-rail"
+      role="region"
+      aria-label="Organizations affiliated with initial letter writers"
+    >
+      <div class="support-track">
+        {
+          supportOrganizations.map((organization) => (
+            <span class:list={{ 'support-logo': true, compact: organization.compact }}>
+              <img src={withBase(organization.logo)} alt={organization.name} loading="eager" />
+            </span>
+          ))
+        }
+        {
+          supportOrganizations.map((organization) => (
+            <span
+              class:list={{ 'support-logo': true, compact: organization.compact }}
+              aria-hidden="true"
+            >
+              <img src={withBase(organization.logo)} alt="" loading="eager" />
+            </span>
+          ))
+        }
+      </div>
+    </div>
+    <p class="container support-disclaimer">
+      Affiliations reflect the letter writers identified in the funded proposal. New academic,
+      industry, standards, and community partners are invited to join and broaden the consortium.
+    </p>
+  </section>
+
+  <section id="timeline" class="section timeline-section">
+    <div class="container split-heading section-heading timeline-heading">
+      <div>
+        <p class="eyebrow">Four-year workplan</p>
+        <h2>A path from shared needs to sustained adoption.</h2>
+      </div>
+      <p class="body-large">
+        Each phase creates a concrete opportunity for academic and industry partners to shape,
+        implement, test, and extend the work.
+      </p>
+    </div>
+    <ol class="container timeline-list">
+      {
+        timeline.map((phase) => (
+          <li>
+            <span class="timeline-period">{phase.period}</span>
+            <div>
+              <>
+                <strong>{phase.title}</strong>
+                <p>{phase.detail}</p>
+              </>
+            </div>
+            <span class="timeline-engagement">{phase.engagement}</span>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section id="participate" class="section participate-section">
+    <div class="container split-heading section-heading participate-header">
+      <div>
+        <p class="eyebrow">Join DIGITS</p>
+        <h2>Shape the data foundation for the next generation of digital health and AI.</h2>
+      </div>
+      <p class="body-large">
+        Early members will help set implementation priorities and establish the adapter patterns,
+        validation methods, and governance that future studies and platforms can build on. We are
+        especially seeking device and platform teams ready to make their systems easier to use in
+        rigorous, large-scale medical research.
+      </p>
+    </div>
+    <div class="container participation-grid">
+      {
+        participation.map((item, index) => (
+          <article>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <h3>{item.audience}</h3>
+            <p>{item.description}</p>
+            <strong>{item.action}</strong>
+          </article>
+        ))
+      }
+    </div>
+    <div class="container contact-panel">
+      <div>
+        <span class="panel-kicker">Join early</span>
+        <h3>Help define how the ecosystem connects.</h3>
+        <p>
+          Founding participants can influence the first use cases and implementation patterns—and
+          contribute the adapters that make their devices, platforms, and research workflows part of
+          an interoperable future.
+        </p>
+      </div>
+      <a class="button button-light" href={withBase(siteConfig.participation.path)}>
+        Join the founding consortium <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

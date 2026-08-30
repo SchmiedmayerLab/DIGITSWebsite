@@ -1,0 +1,28 @@
+---
+// SPDX-FileCopyrightText: 2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md)
+// SPDX-License-Identifier: MIT
+
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<span class:list={['brand', { 'brand-compact': compact }]}>
+  <svg class="brand-mark" viewBox="0 0 48 48" role="img" aria-label="DIGITS open grid mark">
+    <rect x="4" y="4" width="10" height="10" rx="3"></rect>
+    <rect x="19" y="4" width="10" height="10" rx="3"></rect>
+    <rect x="34" y="4" width="10" height="10" rx="3"></rect>
+    <rect x="4" y="19" width="10" height="10" rx="3"></rect>
+    <rect x="19" y="19" width="10" height="10" rx="3"></rect>
+    <rect x="34" y="19" width="10" height="10" rx="3"></rect>
+    <rect x="4" y="34" width="10" height="10" rx="3"></rect>
+    <rect x="19" y="34" width="10" height="10" rx="3"></rect>
+    <path d="M36 39h8M40 35v8"></path>
+  </svg>
+  <span class="brand-copy">
+    <strong>DIGITS</strong>
+    {!compact && <small>DIGital health Interoperability Technology Standards</small>}
+  </span>
+</span>

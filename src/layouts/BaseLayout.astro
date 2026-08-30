@@ -1,0 +1,130 @@
+---
+// SPDX-FileCopyrightText: 2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md)
+// SPDX-License-Identifier: MIT
+
+import '@fontsource-variable/source-sans-3/wght.css';
+import '@fontsource-variable/source-sans-3/wght-italic.css';
+import '../styles/tokens.css';
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { siteConfig } from '../../site.config.mjs';
+import { absoluteUrl, withBase } from '../lib/paths';
+
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+  canonicalPath?: string;
+}
+
+const { title, description = siteConfig.description, noindex = false, canonicalPath } = Astro.props;
+const pageTitle = title
+  ? `${title} · ${siteConfig.name}`
+  : `${siteConfig.name} · Interoperable sensor data for research and AI`;
+const canonical = new URL(
+  canonicalPath ? withBase(canonicalPath) : Astro.url.pathname,
+  Astro.site ?? siteConfig.url,
+).toString();
+const socialImage = absoluteUrl(siteConfig.brand.socialImage);
+const shouldNoindex = noindex || !siteConfig.discovery.indexing;
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Project',
+      '@id': `${absoluteUrl('/')}#project`,
+      name: siteConfig.name,
+      alternateName: siteConfig.accountName,
+      url: absoluteUrl('/'),
+      description: siteConfig.description,
+      image: socialImage,
+      sameAs: siteConfig.social.map((profile) => profile.url),
+      funder: [
+        { '@type': 'Organization', name: 'National Institute of Mental Health' },
+        { '@type': 'Organization', name: 'National Institutes of Health' },
+      ],
+      member: [
+        'Beth Israel Deaconess Medical Center',
+        'Harvard Medical School',
+        'Stanford University',
+        'Stanford Medicine',
+        'American Psychiatric Association',
+      ].map((name) => ({ '@type': 'Organization', name })),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${absoluteUrl('/')}#website`,
+      name: siteConfig.name,
+      url: absoluteUrl('/'),
+      description: siteConfig.description,
+      inLanguage: siteConfig.locale,
+      about: { '@id': `${absoluteUrl('/')}#project` },
+    },
+  ],
+})
+  .replaceAll('<', '\\u003c')
+  .replaceAll('>', '\\u003e')
+  .replaceAll('&', '\\u0026');
+---
+
+<!doctype html>
+<html lang={siteConfig.locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta
+      name="theme-color"
+      content={siteConfig.themeColors.light}
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content={siteConfig.themeColors.dark}
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="robots"
+      content={shouldNoindex
+        ? 'noindex, follow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1'}
+    />
+    <link rel="icon" href={withBase(siteConfig.discovery.favicon)} type="image/svg+xml" />
+    <link rel="canonical" href={canonical} />
+    <link
+      rel="alternate"
+      type="text/markdown"
+      title="DIGITS overview"
+      href={absoluteUrl('/llms.txt')}
+    />
+    <link
+      rel="alternate"
+      type="application/json"
+      title="DIGITS structured index"
+      href={absoluteUrl('/site-index.json')}
+    />
+    <title>{pageTitle}</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:locale" content={siteConfig.openGraphLocale} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`DIGITS — ${siteConfig.brand.tagline}`} />
+    <script is:inline type="application/ld+json" set:html={jsonLd} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <SiteHeader />
+    <main id="main-content">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>

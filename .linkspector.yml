@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md)
+#
+# SPDX-License-Identifier: MIT
+
+dirs:
+  - .
+fileExtensions:
+  - md
+excludedDirs:
+  - src/content
+useGitIgnore: true
+ignorePatterns:
+  - pattern: '^(?:https?|mailto|tel):'
+  - pattern: '^doc:.*$'
+replacementPatterns:
+  - pattern: '(.*)#gh-dark-mode-only'
+    replacement: '$1'
+  - pattern: '(.*)#gh-light-mode-only'
+    replacement: '$1'

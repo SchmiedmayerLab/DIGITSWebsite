@@ -1,0 +1,18 @@
+---
+// SPDX-FileCopyrightText: 2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md)
+// SPDX-License-Identifier: MIT
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
+---
+
+<BaseLayout title="Page not found" canonicalPath="/404.html" noindex>
+  <section class="error-page">
+    <div class="container">
+      <p class="eyebrow">404</p>
+      <h1>This signal did not resolve.</h1>
+      <p>The address may have changed, or the page may not exist yet.</p>
+      <a class="button" href={withBase('/')}>Return to DIGITS</a>
+    </div>
+  </section>
+</BaseLayout>

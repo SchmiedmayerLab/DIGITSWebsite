@@ -1,0 +1,28 @@
+<!--
+SPDX-FileCopyrightText: 2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md)
+SPDX-License-Identifier: MIT
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .background { fill: #172533; }
+    .cell { fill: #fcfbf8; }
+    .plus { stroke: #48c7c0; }
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #f4f0e9; }
+      .cell { fill: #172533; }
+      .plus { stroke: #a51c30; }
+    }
+  </style>
+  <rect class="background" width="64" height="64" rx="14"/>
+  <g class="cell">
+    <rect x="12" y="12" width="11" height="11" rx="3"/>
+    <rect x="27" y="12" width="11" height="11" rx="3"/>
+    <rect x="42" y="12" width="11" height="11" rx="3"/>
+    <rect x="12" y="27" width="11" height="11" rx="3"/>
+    <rect x="27" y="27" width="11" height="11" rx="3"/>
+    <rect x="42" y="27" width="11" height="11" rx="3"/>
+    <rect x="12" y="42" width="11" height="11" rx="3"/>
+    <rect x="27" y="42" width="11" height="11" rx="3"/>
+  </g>
+  <path class="plus" d="M44 47.5h10M49 42.5v10" fill="none" stroke-width="3" stroke-linecap="round"/>
+</svg>

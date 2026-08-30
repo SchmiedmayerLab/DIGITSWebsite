@@ -1,0 +1,7 @@
+Profile photographs: all rights reserved
+
+The profile photographs covered by this license reference remain the property
+of their respective copyright holders. They are included in this private draft
+solely to evaluate the DIGITS initiative website. They are not licensed under
+the repository's MIT license and must not be redistributed or used in a public
+deployment without confirmation of the appropriate permissions.

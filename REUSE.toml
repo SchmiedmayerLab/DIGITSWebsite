@@ -1,0 +1,77 @@
+# SPDX-FileCopyrightText: 2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md)
+# SPDX-License-Identifier: MIT
+
+version = 1
+
+# These format-constrained files cannot safely carry inline comments.
+[[annotations]]
+path = [
+  ".node-version",
+  ".nvmrc",
+  "LICENSE.md",
+  "package-lock.json",
+  "package.json",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md)"
+SPDX-License-Identifier = "MIT"
+
+# PNG exports cannot carry REUSE-readable inline metadata. Their generated SVG counterparts do.
+[[annotations]]
+path = [
+  "public/brand/digits-avatar-dark.png",
+  "public/brand/digits-avatar-light.png",
+  "public/brand/digits-bluesky-banner.png",
+  "public/brand/digits-linkedin-cover.png",
+  "public/brand/digits-lockup-on-dark.png",
+  "public/brand/digits-lockup-on-light.png",
+  "public/brand/digits-social-card.png",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md)"
+SPDX-License-Identifier = "LicenseRef-DIGITS-Brand"
+SPDX-FileComment = "Official DIGITS identity assets; see BRAND.md for intended usage."
+
+# Professional portraits retain their source ownership and require explicit annotations.
+[[annotations]]
+path = ["public/images/team/paul-schmiedmayer.jpg"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Stanford University"
+SPDX-License-Identifier = "LicenseRef-Profile-Photos"
+SPDX-FileComment = "Source: https://profiles.stanford.edu/schmiedmayer"
+
+[[annotations]]
+path = ["public/images/team/john-torous.jpg"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Beth Israel Deaconess Medical Center"
+SPDX-License-Identifier = "LicenseRef-Profile-Photos"
+SPDX-FileComment = "Source: https://research.bidmc.org/translational-hubs/people/dr-john-torous"
+
+[[annotations]]
+path = ["public/images/team/benjamin-nelson.jpg"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Benjamin W. Nelson"
+SPDX-License-Identifier = "LicenseRef-Profile-Photos"
+SPDX-FileComment = "Source: https://github.com/benjaminwnelson"
+
+# Institution and supporter marks are third-party assets and are listed explicitly.
+[[annotations]]
+path = [
+  "public/images/institutions/apa.svg",
+  "public/images/institutions/bidmc.svg",
+  "public/images/institutions/harvard.svg",
+  "public/images/institutions/stanford-medicine.svg",
+  "public/images/institutions/stanford-university.svg",
+  "public/images/supporters/apple.svg",
+  "public/images/supporters/fitabase.svg",
+  "public/images/supporters/google-deepmind.svg",
+  "public/images/supporters/google.svg",
+  "public/images/supporters/johnson-johnson.svg",
+  "public/images/supporters/microsoft.svg",
+  "public/images/supporters/samsung.svg",
+  "public/images/supporters/verily.svg",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Respective institutional and brand owners"
+SPDX-License-Identifier = "LicenseRef-Third-Party-Marks"
+SPDX-FileComment = "Pre-publication evaluation assets; trademarks remain the property of their respective owners."

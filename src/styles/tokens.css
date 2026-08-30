@@ -1,0 +1,149 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md)
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+@layer reset, tokens, base, layout, components, responsive;
+
+@layer tokens {
+  :root {
+    color-scheme: light;
+
+    /* Brand palette: institutional crimson, digital-health teal, warm neutrals. */
+    --brand-primary: #a51c30;
+    --brand-primary-strong: #7f1524;
+    --brand-text: #a51c30;
+    --brand-primary-soft: #f5e4e6;
+    --brand-secondary: #6d526f;
+    --brand-secondary-rgb: 109 82 111;
+    --brand-gradient-end: #653049;
+    --timeline-phase-two: #8a3c58;
+    --timeline-phase-three: #596075;
+    --accent: #087c82;
+    --accent-bright: #48c7c0;
+    --accent-soft: #daf2f0;
+    --accent-on-dark: #a7ebe5;
+    --accent-gradient-end: #125a72;
+
+    /* Semantic text and surfaces. */
+    --text-primary: #172533;
+    --text-secondary: #485966;
+    --text-muted: #52616d;
+    --text-inverse: #fff;
+    --text-on-accent: #10212a;
+    --text-inverse-rgb: 255 255 255;
+    --surface-page: #fcfbf8;
+    --surface-subtle: #f4f0e9;
+    --surface-raised: #fff;
+    --surface-inverse: #172533;
+    --surface-inverse-raised: #222b38;
+    --action-neutral-bg: #172533;
+    --surface-header: rgb(252 251 248 / 90%);
+    --surface-glass: rgb(255 255 255 / 78%);
+    --surface-glass-border: rgb(255 255 255 / 88%);
+    --hero-core-surface-start: #f5e5e7;
+    --hero-core-surface-end: #e4f2ef;
+    --hero-core-text: var(--text-primary);
+    --hero-core-muted: var(--text-secondary);
+    --hero-core-label: var(--accent);
+    --hero-core-mark: var(--brand-primary);
+    --hero-core-plus: var(--accent);
+    --hero-core-border: rgb(var(--brand-primary-rgb) / 16%);
+    --hero-core-shadow: 0 0.9rem 2.5rem rgb(var(--shadow-rgb) / 7%);
+    --partner-logo-surface: transparent;
+    --partner-logo-surface-solid: #fcfbf8;
+    --border-subtle: #deddd8;
+    --border-inverse: rgb(255 255 255 / 15%);
+    --focus-ring: #087c82;
+
+    /* RGB channels keep translucent effects tied to the central palette. */
+    --brand-primary-rgb: 165 28 48;
+    --accent-rgb: 8 124 130;
+    --accent-bright-rgb: 72 199 192;
+    --text-primary-rgb: 23 37 51;
+    --surface-raised-rgb: 255 255 255;
+    --shadow-rgb: 16 31 54;
+
+    /* Compatibility aliases while component styles migrate to semantic names. */
+    --ink: var(--text-primary);
+    --ink-2: var(--surface-inverse-raised);
+    --ink-soft: var(--text-secondary);
+    --ink-muted: var(--text-muted);
+    --paper: var(--surface-page);
+    --paper-warm: var(--surface-subtle);
+    --white: var(--surface-raised);
+    --mint: var(--accent-bright);
+    --mint-dark: var(--accent);
+    --mint-light: var(--accent-soft);
+    --blue: var(--brand-text);
+    --blue-dark: var(--brand-primary-strong);
+    --blue-light: var(--brand-primary-soft);
+    --violet: var(--brand-secondary);
+    --line: var(--border-subtle);
+    --line-dark: var(--border-inverse);
+
+    --font: 'Source Sans 3 Variable', 'Source Sans 3', 'Helvetica Neue', arial, sans-serif;
+    --container: 82rem;
+    --gutter: clamp(1.1rem, 4vw, 3.5rem);
+    --section: clamp(4.25rem, 6.5vw, 6.75rem);
+    --radius-sm: 0.7rem;
+    --radius: 1.25rem;
+    --radius-lg: 2rem;
+    --shadow: 0 1.6rem 5rem rgb(var(--shadow-rgb) / 12%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --brand-primary: #a51c30;
+      --brand-primary-strong: #7f1524;
+      --brand-text: #f09aa5;
+      --brand-primary-soft: #3a222a;
+      --brand-secondary: #b59ab7;
+      --brand-secondary-rgb: 181 154 183;
+      --brand-gradient-end: #7f3d50;
+      --timeline-phase-two: #c76d87;
+      --timeline-phase-three: #98a1b8;
+      --accent: #73d8d1;
+      --accent-bright: #55cec6;
+      --accent-soft: #17383a;
+      --accent-on-dark: #a7ebe5;
+      --accent-gradient-end: #1c7185;
+      --text-primary: #f2f3ef;
+      --text-secondary: #c5cdcd;
+      --text-muted: #a8b4b7;
+      --text-on-accent: #10212a;
+      --surface-page: #0f171e;
+      --surface-subtle: #151f27;
+      --surface-raised: #1b2730;
+      --surface-inverse: #091118;
+      --surface-inverse-raised: #111c24;
+      --action-neutral-bg: #a51c30;
+      --surface-header: rgb(15 23 30 / 90%);
+      --surface-glass: rgb(27 39 48 / 86%);
+      --surface-glass-border: rgb(255 255 255 / 12%);
+      --hero-core-surface-start: var(--surface-inverse);
+      --hero-core-surface-end: var(--surface-inverse-raised);
+      --hero-core-text: var(--text-inverse);
+      --hero-core-muted: rgb(var(--text-inverse-rgb) / 66%);
+      --hero-core-label: var(--accent-on-dark);
+      --hero-core-mark: var(--text-inverse);
+      --hero-core-plus: var(--accent-bright);
+      --hero-core-border: rgb(var(--text-inverse-rgb) / 12%);
+      --hero-core-shadow: 0 0.9rem 2.5rem rgb(0 0 0 / 16%);
+      --partner-logo-surface: #f7f4ee;
+      --partner-logo-surface-solid: #f7f4ee;
+      --border-subtle: #34434c;
+      --border-inverse: rgb(255 255 255 / 16%);
+      --focus-ring: #73d8d1;
+      --brand-primary-rgb: 165 28 48;
+      --accent-rgb: 115 216 209;
+      --accent-bright-rgb: 85 206 198;
+      --text-primary-rgb: 242 243 239;
+      --surface-raised-rgb: 27 39 48;
+      --shadow-rgb: 0 0 0;
+      --shadow: 0 1.6rem 5rem rgb(0 0 0 / 30%);
+    }
+  }
+}

@@ -1,0 +1,51 @@
+---
+// SPDX-FileCopyrightText: 2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md)
+// SPDX-License-Identifier: MIT
+
+import DigitsMark from './DigitsMark.astro';
+import { siteConfig } from '../../site.config.mjs';
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <DigitsMark />
+      <p>
+        An NIMH/NIH-supported collaboration advancing interoperable smartphone and wearable sensor
+        data for research and AI.
+      </p>
+      <nav class="footer-social" aria-label="DIGITS social profiles">
+        {
+          siteConfig.social.map((profile) => (
+            <a href={profile.url} rel="me noopener noreferrer" target="_blank">
+              {profile.name === 'LinkedIn' ? (
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5.2 7.8H1.7V19h3.5V7.8ZM3.4 2.2a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM18.9 8.7a4.1 4.1 0 0 0-3.5-1.9 3.7 3.7 0 0 0-3.3 1.8V7.8H8.7V19h3.5v-5.5c0-1.5.3-3.8 2.7-3.8s2.5 2.2 2.5 3.7V19h3.5v-6.3c0-3.1-.7-5.5-4.3-5.5-1 0-1.9.4-2.5 1.1" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 10.8c-.7-1.4-2.7-4-4.6-5.4C5.6 4.1 5 4.3 4.6 4.5c-.5.2-.6 1-.6 1.5 0 .4.2 3.7.3 4.2.5 1.7 2.3 2.3 3.9 2.1-2.8.4-5.2 1.3-2 4.8 3.5 3.6 4.8-.8 5.2-2.3.1-.5.2-.7.6-.7s.5.2.6.7c.4 1.5 1.7 5.9 5.2 2.3 3.2-3.5.8-4.4-2-4.8 1.6.2 3.4-.4 3.9-2.1.1-.5.3-3.8.3-4.2 0-.5-.1-1.3-.6-1.5-.4-.2-1-.4-2.8.9-1.9 1.4-3.9 4-4.6 5.4Z" />
+                </svg>
+              )}
+              <span>
+                <strong>{profile.name}</strong>
+                <small>{profile.handle}</small>
+              </span>
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+    <div class="footer-partners" aria-label="Founding institutional collaboration">
+      <span>Beth Israel Deaconess Medical Center</span>
+      <span>Harvard Medical School</span>
+      <span>Stanford University</span>
+      <span>Stanford Medicine</span>
+      <span>American Psychiatric Association</span>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>OpenDIGITS</span>
+    <span>DIGital health Interoperability Technology Standards</span>
+  </div>
+</footer>

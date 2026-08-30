@@ -1,0 +1,9 @@
+DIGITS brand assets
+
+Copyright 2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md).
+
+The files covered by this license reference may be used for official DIGITS
+initiative communications. No permission is granted to imply endorsement,
+sponsorship, or affiliation with DIGITS or its participating institutions.
+The DIGITS name, open-grid mark, and associated lockups may not be altered or
+used as the identity of another project without prior written permission.

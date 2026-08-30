@@ -1,0 +1,28 @@
+---
+// SPDX-FileCopyrightText: 2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md)
+// SPDX-License-Identifier: MIT
+
+import DigitsMark from './DigitsMark.astro';
+import { withBase } from '../lib/paths';
+import { siteConfig } from '../../site.config.mjs';
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand-link" href={withBase('/#top')} aria-label="DIGITS home">
+      <DigitsMark />
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href={withBase('/#approach')}>Approach</a>
+      <a href={withBase('/#consortium')}>Consortium</a>
+      <a href={withBase('/#team')}>Team</a>
+      <a
+        class="nav-cta"
+        href={withBase(siteConfig.participation.path)}
+        aria-current={Astro.url.pathname.endsWith(siteConfig.participation.path)
+          ? 'page'
+          : undefined}>Participate</a
+      >
+    </nav>
+  </div>
+</header>
