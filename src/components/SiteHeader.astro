@@ -19,10 +19,12 @@ import { siteConfig } from '../../site.config.mjs';
       <a
         class="nav-cta"
         href={withBase(siteConfig.participation.path)}
-        aria-current={Astro.url.pathname.endsWith(siteConfig.participation.path)
-          ? 'page'
-          : undefined}>Participate</a
+        aria-current={
+          Astro.url.pathname.endsWith(siteConfig.participation.path) ? 'page' : undefined
+        }
       >
+        Participate
+      </a>
     </nav>
   </div>
 </header>

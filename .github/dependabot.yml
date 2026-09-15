@@ -16,6 +16,10 @@ updates:
     directory: /
     patterns: ['*']
     multi-ecosystem-group: weekly-dependencies
+    cooldown:
+      default-days: 7
+      semver-major-days: 14
+      exclude: ['SchmiedmayerLab/*']
     ignore:
       # TypeScript-ESLint 8 currently requires TypeScript < 6.1.
       - dependency-name: typescript
@@ -24,3 +28,6 @@ updates:
     directory: /
     patterns: ['*']
     multi-ecosystem-group: weekly-dependencies
+    cooldown:
+      default-days: 7
+      exclude: ['SchmiedmayerLab/*']

@@ -87,9 +87,9 @@ const jsonLd = JSON.stringify({
     />
     <meta
       name="robots"
-      content={shouldNoindex
-        ? 'noindex, follow'
-        : 'index, follow, max-image-preview:large, max-snippet:-1'}
+      content={
+        shouldNoindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1'
+      }
     />
     <link rel="icon" href={withBase(siteConfig.discovery.favicon)} type="image/svg+xml" />
     <link rel="canonical" href={canonical} />
@@ -117,10 +117,12 @@ const jsonLd = JSON.stringify({
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={`DIGITS — ${siteConfig.brand.tagline}`} />
-    <script is:inline type="application/ld+json" set:html={jsonLd} />
+    <script is:inline type="application/ld+json" set:html={jsonLd}></script>
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <a class="skip-link" href="#main-content">
+      Skip to main content
+    </a>
     <SiteHeader />
     <main id="main-content">
       <slot />
