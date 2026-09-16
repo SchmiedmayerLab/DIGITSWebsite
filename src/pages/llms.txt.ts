@@ -19,6 +19,10 @@ DIGITS stands for DIGital health Interoperability Technology Standards. OpenDIGI
 
 DIGITS is an NIMH/NIH-supported consortium building practical interoperability for smartphone, wearable, and sensor data in research. It connects and extends established foundations such as HL7 FHIR, Open mHealth, IEEE, OMOP, and clinical terminologies rather than creating another competing standard. The work combines cross-sector governance, mappings, adapters, validation tools, multi-device research evaluation, adoption support, and long-term stewardship. This shared data layer enables larger longitudinal datasets and reproducible multimodal AI and agentic health applications.
 
+## Reference implementation
+
+DIGITS maintains an open reference implementation with a source-neutral core, adapters for Apple HealthKit, Android Health Connect, Apple SensorKit, and connected wearable providers, and a machine-readable catalog of measurement definitions. It is currently in release-candidate status.
+
 ## Participation
 
 DIGITS invites device and platform teams to build and validate adapters, and welcomes researchers, clinicians, standards experts, regulators, ethics experts, and people with lived experience to shape the consortium and its working groups from the beginning.

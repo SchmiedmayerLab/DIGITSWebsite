@@ -20,8 +20,8 @@ interface Props {
 
 const { title, description = siteConfig.description, noindex = false, canonicalPath } = Astro.props;
 const pageTitle = title
-  ? `${title} · ${siteConfig.name}`
-  : `${siteConfig.name} · Interoperable sensor data for research and AI`;
+  ? `${title} | ${siteConfig.name}`
+  : `${siteConfig.name} | Interoperable sensor data for research and AI`;
 const canonical = new URL(
   canonicalPath ? withBase(canonicalPath) : Astro.url.pathname,
   Astro.site ?? siteConfig.url,
@@ -116,10 +116,10 @@ const jsonLd = JSON.stringify({
     <meta property="og:image" content={socialImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content={`DIGITS — ${siteConfig.brand.tagline}`} />
+    <meta property="og:image:alt" content={`${siteConfig.name}: ${siteConfig.brand.tagline}`} />
     <script is:inline type="application/ld+json" set:html={jsonLd}></script>
   </head>
-  <body>
+  <body id="top">
     <a class="skip-link" href="#main-content">
       Skip to main content
     </a>
