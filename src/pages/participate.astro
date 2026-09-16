@@ -12,13 +12,8 @@ import { siteConfig } from '../../site.config.mjs';
   canonicalPath={siteConfig.participation.path}
 >
   <section class="form-hero">
-    <div class="container form-heading">
-      <div>
-        <p class="eyebrow">
-          <span></span> Join DIGITS
-        </p>
-        <h1>Help shape what comes next.</h1>
-      </div>
+    <div class="container">
+      <h1>Participate</h1>
       <div class="form-intro">
         <p>
           We are bringing together device and platform teams, researchers, clinicians, standards
@@ -33,29 +28,30 @@ import { siteConfig } from '../../site.config.mjs';
   </section>
 
   <section class="form-section" aria-labelledby="interest-form-title">
-    <div class="container form-shell">
-      <div class="form-shell-header">
-        <div>
-          <p class="eyebrow">Expression of interest</p>
-          <h2 id="interest-form-title">Connect with the consortium.</h2>
+    <div class="container">
+      <div class="form-shell">
+        <div class="form-shell-header">
+          <h2 id="interest-form-title">Expression of interest</h2>
+          <p>
+            Please do not include confidential, proprietary, patient, or participant information.
+          </p>
         </div>
-        <p>Please do not include confidential, proprietary, patient, or participant information.</p>
+        <iframe
+          class="notion-form"
+          src={siteConfig.participation.formUrl}
+          title="DIGITS consortium interest form"
+          loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        <p class="form-fallback">
+          If the form does not appear, you can{' '}
+          <a href={siteConfig.participation.formUrl} target="_blank" rel="noreferrer">
+            open it in a new window
+          </a>
+          .
+        </p>
       </div>
-      <iframe
-        class="notion-form"
-        src={siteConfig.participation.formUrl}
-        title="DIGITS consortium interest form"
-        loading="eager"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
-      <p class="form-fallback">
-        If the form does not appear, you can{' '}
-        <a href={siteConfig.participation.formUrl} target="_blank" rel="noreferrer">
-          open it in a new window <span aria-hidden="true">↗</span>
-        </a>
-        .
-      </p>
     </div>
   </section>
 </BaseLayout>
