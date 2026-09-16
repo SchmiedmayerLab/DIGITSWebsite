@@ -47,13 +47,11 @@ const institutions = [
 ---
 
 <BaseLayout>
-  <section id="top" class="hero">
-    <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
-    <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
+  <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">
-          <span></span> Across devices · platforms · vendors
+          <span></span> Across devices, platforms, and vendors
         </p>
         <h1>Interoperable sensor data for research and AI.</h1>
         <p class="hero-summary">
@@ -103,7 +101,7 @@ const institutions = [
         <div class="open-core">
           <DigitsMark compact />
           <span class="core-label">Practical interoperability</span>
-          <strong>Map · profile · validate</strong>
+          <strong>Map, profile, validate</strong>
           <small>Building on established standards</small>
         </div>
         <div class="system-flow flow-out" aria-hidden="true">
@@ -146,7 +144,7 @@ const institutions = [
       <div>
         <p>
           DIGITS aims to make sensor data comparable and traceable across devices, software
-          versions, and studies—helping researchers assemble larger longitudinal cohorts and
+          versions, and studies. This helps researchers assemble larger longitudinal cohorts and
           evaluate AI across real-world populations.
         </p>
         <p class="ai-caveat">
@@ -177,15 +175,20 @@ const institutions = [
           <span>{String(index + 1).padStart(2, '0')}</span>
           <strong>{stage.label}</strong>
           <p>{stage.detail}</p>
+          {index < aiPipeline.length - 1 && (
+            <i class="pipeline-arrow" aria-hidden="true">
+              <svg viewBox="0 0 16 16">
+                <path d="M6 3.5 10.5 8 6 12.5" />
+              </svg>
+            </i>
+          )}
         </li>
       ))}
     </ol>
-    <div class="container ai-outcomes" aria-label="Potential research outcomes">
-      <span>Cross-device digital biomarkers</span>
-      <span>Generalizable multimodal models</span>
-      <span>Reproducible agent evaluation</span>
-      <span>Privacy-aware real-world research</span>
-    </div>
+    <p class="container ai-outcomes">
+      Toward cross-device digital biomarkers, generalizable multimodal models, reproducible agent
+      evaluation, and privacy-aware real-world research.
+    </p>
   </section>
 
   <section id="goals" class="section goals-section">
@@ -236,7 +239,7 @@ const institutions = [
       <div class="governance-board governance-node">
         <span>Strategic leadership</span>
         <strong>Governance Board</strong>
-        <p>Clinical · informatics · industry co-chairs</p>
+        <p>Clinical, informatics, and industry co-chairs</p>
       </div>
       <div class="governance-branch" aria-hidden="true"></div>
       <div class="governance-middle">
@@ -422,7 +425,7 @@ const institutions = [
         <span class="panel-kicker">Join early</span>
         <h3>Help define how the ecosystem connects.</h3>
         <p>
-          Founding participants can influence the first use cases and implementation patterns—and
+          Founding participants can influence the first use cases and implementation patterns and
           contribute the adapters that make their devices, platforms, and research workflows part of
           an interoperable future.
         </p>
