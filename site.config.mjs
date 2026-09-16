@@ -22,7 +22,7 @@ export const siteConfig = {
     tagline: 'Wearable data that works together.',
     descriptor: 'Practical interoperability for sensor data, research, and AI.',
     socialBio:
-      'An NIH-funded consortium making wearable and sensor data work across devices, platforms, and studies—for research and responsible AI.',
+      'An NIH-funded consortium making wearable and sensor data work across devices, platforms, and studies for research and responsible AI.',
     socialImage: '/brand/digits-social-card.png',
   },
   participation: {
