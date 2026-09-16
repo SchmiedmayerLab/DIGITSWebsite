@@ -24,7 +24,7 @@ export const goals = [
     verb: 'Assess',
     title: 'Start with what already exists',
     description:
-      'Evaluate FHIR, Open mHealth, IEEE, OMOP, established terminologies, and manufacturer formats to identify practical adoption gaps—not create another isolated standard.',
+      'Evaluate FHIR, Open mHealth, IEEE, OMOP, established terminologies, and manufacturer formats to identify practical adoption gaps rather than create another isolated standard.',
   },
   {
     number: '03',
@@ -61,7 +61,7 @@ export const leaders = [
     initials: 'JT',
     name: 'John Torous, MD, MBI',
     role: 'Clinical co-chair',
-    affiliation: 'Beth Israel Deaconess Medical Center · Harvard Medical School',
+    affiliation: 'Beth Israel Deaconess Medical Center and Harvard Medical School',
     image: '/images/team/john-torous.jpg',
     imageAlt: 'Portrait of John Torous',
     imagePosition: 'center 6%',
@@ -71,7 +71,7 @@ export const leaders = [
     initials: 'PS',
     name: 'Paul Schmiedmayer, PhD',
     role: 'Informatics & AI Co-Chair',
-    affiliation: 'Stanford University · Division of Computational Medicine',
+    affiliation: 'Stanford University, Division of Computational Medicine',
     image: '/images/team/paul-schmiedmayer.jpg',
     imageAlt: 'Portrait of Paul Schmiedmayer',
     imagePosition: 'center 22%',
