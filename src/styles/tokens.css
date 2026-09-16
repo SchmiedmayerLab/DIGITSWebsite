@@ -16,15 +16,13 @@
     --brand-text: #a51c30;
     --brand-primary-soft: #f5e4e6;
     --brand-secondary: #6d526f;
-    --brand-secondary-rgb: 109 82 111;
-    --brand-gradient-end: #653049;
     --timeline-phase-two: #8a3c58;
     --timeline-phase-three: #596075;
     --accent: #087c82;
     --accent-bright: #48c7c0;
     --accent-soft: #daf2f0;
     --accent-on-dark: #a7ebe5;
-    --accent-gradient-end: #125a72;
+    --accent-strong: #0f5f66;
 
     /* Semantic text and surfaces. */
     --text-primary: #172533;
@@ -42,8 +40,7 @@
     --surface-header: rgb(252 251 248 / 90%);
     --surface-glass: rgb(255 255 255 / 78%);
     --surface-glass-border: rgb(255 255 255 / 88%);
-    --hero-core-surface-start: #f5e5e7;
-    --hero-core-surface-end: #e4f2ef;
+    --hero-core-surface: #f9f7f4;
     --hero-core-text: var(--text-primary);
     --hero-core-muted: var(--text-secondary);
     --hero-core-label: var(--accent);
@@ -62,7 +59,6 @@
     --accent-rgb: 8 124 130;
     --accent-bright-rgb: 72 199 192;
     --text-primary-rgb: 23 37 51;
-    --surface-raised-rgb: 255 255 255;
     --shadow-rgb: 16 31 54;
 
     /* Compatibility aliases while component styles migrate to semantic names. */
@@ -79,7 +75,6 @@
     --blue: var(--brand-text);
     --blue-dark: var(--brand-primary-strong);
     --blue-light: var(--brand-primary-soft);
-    --violet: var(--brand-secondary);
     --line: var(--border-subtle);
     --line-dark: var(--border-inverse);
 
@@ -101,15 +96,13 @@
       --brand-text: #f09aa5;
       --brand-primary-soft: #3a222a;
       --brand-secondary: #b59ab7;
-      --brand-secondary-rgb: 181 154 183;
-      --brand-gradient-end: #7f3d50;
       --timeline-phase-two: #c76d87;
       --timeline-phase-three: #98a1b8;
       --accent: #73d8d1;
       --accent-bright: #55cec6;
       --accent-soft: #17383a;
       --accent-on-dark: #a7ebe5;
-      --accent-gradient-end: #1c7185;
+      --accent-strong: #155764;
       --text-primary: #f2f3ef;
       --text-secondary: #c5cdcd;
       --text-muted: #a8b4b7;
@@ -123,8 +116,7 @@
       --surface-header: rgb(15 23 30 / 90%);
       --surface-glass: rgb(27 39 48 / 86%);
       --surface-glass-border: rgb(255 255 255 / 12%);
-      --hero-core-surface-start: var(--surface-inverse);
-      --hero-core-surface-end: var(--surface-inverse-raised);
+      --hero-core-surface: var(--surface-inverse-raised);
       --hero-core-text: var(--text-inverse);
       --hero-core-muted: rgb(var(--text-inverse-rgb) / 66%);
       --hero-core-label: var(--accent-on-dark);
@@ -141,7 +133,6 @@
       --accent-rgb: 115 216 209;
       --accent-bright-rgb: 85 206 198;
       --text-primary-rgb: 242 243 239;
-      --surface-raised-rgb: 27 39 48;
       --shadow-rgb: 0 0 0;
       --shadow: 0 1.6rem 5rem rgb(0 0 0 / 30%);
     }
