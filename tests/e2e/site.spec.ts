@@ -97,7 +97,7 @@ test('participation calls to action lead to the embedded interest form', async (
   );
 
   await page.goto(participationPath, { waitUntil: 'networkidle' });
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Help shape what comes next.');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Participate');
   await expect(page.locator('iframe[title="DIGITS consortium interest form"]')).toHaveAttribute(
     'src',
     siteConfig.participation.formUrl,
@@ -142,17 +142,17 @@ test('appearance and browser chrome follow the system color scheme', async ({ pa
   );
   await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', /favicon\.svg$/);
   await expect(page.locator('[data-theme-toggle]')).toHaveCount(0);
-  expect(
-    await page.locator('.open-core').evaluate((element) => getComputedStyle(element).color),
-  ).toBe('rgb(255, 255, 255)');
+  expect(await page.locator('body').evaluate((element) => getComputedStyle(element).color)).toBe(
+    'rgb(242, 243, 239)',
+  );
 
   await page.emulateMedia({ colorScheme: 'light' });
   expect(
     await page.locator('html').evaluate((element) => getComputedStyle(element).colorScheme),
   ).toBe('light');
-  expect(
-    await page.locator('.open-core').evaluate((element) => getComputedStyle(element).color),
-  ).toBe('rgb(23, 37, 51)');
+  expect(await page.locator('body').evaluate((element) => getComputedStyle(element).color)).toBe(
+    'rgb(23, 37, 51)',
+  );
 });
 
 test('social previews use the generated large-format DIGITS card', async ({ page }) => {
