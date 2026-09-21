@@ -52,7 +52,7 @@ const institutions = [
         <p class="eyebrow">
           <span></span> Across devices, platforms, and vendors
         </p>
-        <h1>Interoperable sensor data for research and AI.</h1>
+        <h1>Interoperable mobile health data for research and AI.</h1>
         <p class="hero-summary">
           DIGITS brings researchers, clinicians, standards experts, and technology partners together
           to make wearable and smartphone data portable, interpretable, and ready for large-scale
@@ -142,7 +142,7 @@ const institutions = [
     <div class="container split-heading ai-heading">
       <div>
         <p class="eyebrow eyebrow-light">The shared data foundation</p>
-        <h2>Structured sensor data is foundational to medical AI.</h2>
+        <h2>Medical AI depends on structured, traceable measurements.</h2>
       </div>
       <div>
         <p>
@@ -184,21 +184,14 @@ const institutions = [
     </ol>
     <div class="container ai-outcomes" aria-label="Potential research outcomes">
       <span>Cross-device digital biomarkers</span>
-      <span>Time-series reasoning</span>
+      <a
+        href={siteConfig.references.openTSLM}
+        aria-label="OpenTSLM paper on arXiv: Time-series reasoning"
+      >
+        Time-series reasoning <span aria-hidden="true">↗</span>
+      </a>
       <span>Generalizable multimodal models</span>
       <span>Reproducible agent evaluation</span>
-    </div>
-    <div class="container ai-connection">
-      <div>
-        <span class="panel-kicker">Related research</span>
-        <h3>From interoperable signals to time-series reasoning</h3>
-      </div>
-      <p>
-        Research such as <a href={siteConfig.references.openTSLM}>OpenTSLM</a> explores how language
-        models can reason over multivariate medical text and time-series data. DIGITS addresses a
-        prerequisite for this work: portable measurements with explicit meaning, quality, and
-        provenance across data sources.
-      </p>
     </div>
   </section>
 
@@ -249,7 +242,7 @@ const institutions = [
       <div class="governance-board governance-node">
         <span>Strategic leadership</span>
         <strong>Governance Board</strong>
-        <p>Clinical · informatics · industry co-chairs</p>
+        <p>Clinical · informatics &amp; AI · industry co-chairs</p>
       </div>
       <div class="governance-branch" aria-hidden="true"></div>
       <div class="governance-middle">
@@ -370,7 +363,9 @@ const institutions = [
     <div class="container split-heading section-heading participate-header">
       <div>
         <p class="eyebrow">Join DIGITS</p>
-        <h2>Help make wearable and sensor data usable across research systems.</h2>
+        <h2>
+          Help make wearable, patient-provided, and device-derived data usable across systems.
+        </h2>
       </div>
       <p class="body-large">
         Early members will help set implementation priorities and establish the adapter patterns,

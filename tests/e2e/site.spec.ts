@@ -152,11 +152,13 @@ test('appearance and browser chrome follow the system color scheme', async ({ pa
 
 test('the landing page explains AI relevance without company-logo promotion', async ({ page }) => {
   await page.goto(route('/'));
-  await expect(page.getByRole('heading', { name: /structured sensor data/i })).toBeVisible();
+  await expect(
+    page.getByRole('heading', { name: /structured, traceable measurements/i }),
+  ).toBeVisible();
   await expect(page.locator('.hero-system')).toContainText('Raw signals');
   await expect(page.locator('.hero-system')).toContainText('Patient reports');
   await expect(page.locator('.hero-system')).toContainText('Quality + provenance');
-  await expect(page.getByRole('link', { name: 'OpenTSLM' })).toHaveAttribute(
+  await expect(page.getByRole('link', { name: /OpenTSLM paper on arXiv/i })).toHaveAttribute(
     'href',
     siteConfig.references.openTSLM,
   );

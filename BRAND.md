@@ -12,11 +12,11 @@ The DIGITS identity combines an open grid with a final plus sign: structured dat
 
 **Primary tagline:** Wearable data that works together.
 
-**Supporting line:** Practical interoperability for sensor data, research, and AI.
+**Supporting line:** Practical interoperability for mobile health data, research, and AI.
 
-**Social bio:** An NIH-funded consortium making wearable and sensor data work across devices, platforms, and studies—for research and responsible AI.
+**Social bio:** An NIH-funded consortium making mobile health data work across devices, platforms, and studies—for research and responsible AI.
 
-**Long description:** DIGITS brings researchers, clinicians, standards experts, and technology partners together to connect existing standards with practical profiles, mappings, adapters, and validation tools for wearable and sensor data.
+**Long description:** DIGITS brings researchers, clinicians, standards experts, and technology partners together to connect existing standards with practical profiles, mappings, adapters, and validation tools for wearable, smartphone, and patient-provided data.
 
 Recommended account presentation:
 

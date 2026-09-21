@@ -834,7 +834,8 @@
     gap: 0.6rem;
   }
 
-  .ai-outcomes span {
+  .ai-outcomes > span,
+  .ai-outcomes > a {
     padding: 0.5rem 0.8rem;
     color: rgb(var(--text-inverse-rgb) / 70%);
     border: 1px solid var(--line-dark);
@@ -842,33 +843,20 @@
     font-size: 0.76rem;
   }
 
-  .ai-connection {
-    display: grid;
-    margin-top: 2.4rem;
-    padding-top: 2rem;
-    grid-template-columns: minmax(14rem, 0.75fr) minmax(18rem, 1fr);
-    gap: clamp(1.5rem, 5vw, 4rem);
-    border-top: 1px solid var(--line-dark);
-  }
-
-  .ai-connection .panel-kicker {
-    color: var(--mint);
-  }
-
-  .ai-connection h3 {
-    margin-top: 0.55rem;
-    color: var(--text-inverse);
-    font-size: clamp(1.35rem, 2vw, 1.8rem);
-  }
-
-  .ai-connection p {
-    color: rgb(var(--text-inverse-rgb) / 72%);
-    font-size: 1rem;
-  }
-
-  .ai-connection a {
+  .ai-outcomes > a {
     color: var(--accent-on-dark);
-    font-weight: 750;
+    font-weight: 720;
+    text-decoration: none;
+    transition:
+      color 160ms ease,
+      border-color 160ms ease,
+      background-color 160ms ease;
+  }
+
+  .ai-outcomes > a:hover {
+    color: var(--text-inverse);
+    background: rgb(var(--accent-bright-rgb) / 10%);
+    border-color: rgb(var(--accent-bright-rgb) / 50%);
   }
 
   /* Goals */
@@ -1830,7 +1818,6 @@
     .hero-grid,
     .challenge-grid,
     .ai-heading,
-    .ai-connection,
     .split-heading,
     .form-heading,
     .form-shell-header,

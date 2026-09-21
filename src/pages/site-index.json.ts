@@ -20,7 +20,7 @@ export const GET: APIRoute = () =>
           {
             id: absoluteUrl('/'),
             type: 'ResearchProject',
-            title: 'DIGITS consortium for interoperable sensor data, research, and AI',
+            title: 'DIGITS consortium for interoperable mobile health data, research, and AI',
             description: siteConfig.description,
             positioning:
               'DIGITS builds on and connects existing standards rather than creating an isolated competing standard.',
@@ -47,7 +47,7 @@ export const GET: APIRoute = () =>
             type: 'WebPage',
             title: 'Participate in DIGITS',
             description:
-              'Connect with DIGITS and help shape practical interoperability for wearable and sensor data in research and AI.',
+              'Connect with DIGITS and help shape practical interoperability for mobile health data in research and AI.',
             isPartOf: absoluteUrl('/'),
           },
         ],

@@ -9,7 +9,7 @@ export const siteConfig = {
   name: 'DIGITS',
   accountName: 'OpenDIGITS',
   description:
-    'An NIH-funded consortium building on existing standards to make smartphone and wearable sensor data interoperable for large-scale research and AI.',
+    'An NIH-funded consortium building on existing standards to make mobile health data interoperable for large-scale research and AI.',
   url: deploymentUrl,
   base: deploymentBase,
   locale: 'en-US',
@@ -20,9 +20,9 @@ export const siteConfig = {
   },
   brand: {
     tagline: 'Wearable data that works together.',
-    descriptor: 'Practical interoperability for sensor data, research, and AI.',
+    descriptor: 'Practical interoperability for mobile health data, research, and AI.',
     socialBio:
-      'An NIH-funded consortium making wearable and sensor data work across devices, platforms, and studies—for research and responsible AI.',
+      'An NIH-funded consortium making mobile health data work across devices, platforms, and studies—for research and responsible AI.',
     socialImage: '/brand/digits-social-card.png',
   },
   participation: {
@@ -30,7 +30,7 @@ export const siteConfig = {
     formUrl: 'https://schmiedmayer-lab.notion.site/ebd//3cc96f063cd480f8ac40fc91b55d0000',
   },
   references: {
-    openTSLM: 'https://opentslm.com',
+    openTSLM: 'https://arxiv.org/abs/2510.02410',
   },
   social: [
     {

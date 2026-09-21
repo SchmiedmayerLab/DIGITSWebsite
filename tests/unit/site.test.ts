@@ -63,13 +63,13 @@ describe('deployment paths', () => {
   });
 
   it('links to the canonical OpenTSLM research site', () => {
-    expect(siteConfig.references.openTSLM).toBe('https://opentslm.com');
+    expect(siteConfig.references.openTSLM).toBe('https://arxiv.org/abs/2510.02410');
   });
 
   it('defines a concise reusable verbal identity', () => {
     expect(siteConfig.brand.tagline).toBe('Wearable data that works together.');
     expect(siteConfig.brand.descriptor).toBe(
-      'Practical interoperability for sensor data, research, and AI.',
+      'Practical interoperability for mobile health data, research, and AI.',
     );
     expect(siteConfig.brand.socialBio.length).toBeLessThanOrEqual(160);
     expect(siteConfig.brand.socialImage).toBe('/brand/digits-social-card.png');

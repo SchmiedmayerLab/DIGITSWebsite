@@ -18,7 +18,7 @@ SPDX-License-Identifier: MIT
 
 ![DIGITS — Wearable data that works together.](public/brand/digits-bluesky-banner.png)
 
-DIGITS is an NIH-funded consortium making smartphone, wearable, and sensor data interoperable across devices, platforms, and studies for research and responsible AI.
+DIGITS is an NIH-funded consortium making mobile health data interoperable across devices, platforms, and studies for research and responsible AI.
 
 ## Tooling
 
