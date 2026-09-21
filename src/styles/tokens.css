@@ -88,8 +88,8 @@
     --gutter: clamp(1.1rem, 4vw, 3.5rem);
     --section: clamp(4.25rem, 6.5vw, 6.75rem);
     --radius-sm: 0.7rem;
-    --radius: 1.25rem;
-    --radius-lg: 2rem;
+    --radius: 1rem;
+    --radius-lg: 1.35rem;
     --shadow: 0 1.6rem 5rem rgb(var(--shadow-rgb) / 12%);
   }
 

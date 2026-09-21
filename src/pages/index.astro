@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: MIT
 
 import BaseLayout from '../layouts/BaseLayout.astro';
-import DigitsMark from '../components/DigitsMark.astro';
 import {
   aiPipeline,
   foundations,
@@ -11,7 +10,6 @@ import {
   governanceGroups,
   leaders,
   participation,
-  supportOrganizations,
   timeline,
 } from '../data/site';
 import { withBase } from '../lib/paths';
@@ -48,18 +46,17 @@ const institutions = [
 
 <BaseLayout>
   <section id="top" class="hero">
-    <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
-    <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
     <div class="container hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">
-          <span></span> Across devices · platforms · vendors
+          <span></span> Across devices, platforms, and vendors
         </p>
         <h1>Interoperable sensor data for research and AI.</h1>
         <p class="hero-summary">
           DIGITS brings researchers, clinicians, standards experts, and technology partners together
           to make wearable and smartphone data portable, interpretable, and ready for large-scale
-          medical research.
+          medical research. Today, equivalent measurements are represented differently across
+          platforms, making them difficult to combine, compare, and reuse.
         </p>
         <div class="hero-actions">
           <a class="button" href={withBase(siteConfig.participation.path)}>
@@ -77,47 +74,50 @@ const institutions = [
       </div>
 
       <div
-        class="hero-system"
-        aria-label="Device and sensor data flow through the DIGITS interoperability layer into research and AI uses"
+        class="hero-example"
+        aria-label="The same heart rate measurement as named by four data platforms"
       >
-        <p class="system-label">Device and sensor data in</p>
-        <div class="signal-stack">
-          <div class="signal-card">
-            <span class="signal-pulse"></span>
-            <strong>Wearables</strong>
+        <div class="hero-example-heading">
+          <span>One measurement</span>
+          <strong>Heart rate, four representations</strong>
+        </div>
+        <dl class="mapping-list">
+          <div>
+            <dt>Apple HealthKit</dt>
+            <dd>
+              <code>HKQuantityTypeIdentifierHeartRate</code>
+            </dd>
           </div>
-          <div class="signal-card">
-            <span class="signal-pulse"></span>
-            <strong>Smartphones</strong>
+          <div>
+            <dt>Android Health Connect</dt>
+            <dd>
+              <code>HeartRateRecord</code>
+            </dd>
           </div>
-          <div class="signal-card">
-            <span class="signal-pulse"></span>
-            <strong>Research sensors</strong>
+          <div>
+            <dt>Apple SensorKit</dt>
+            <dd>
+              <code>SRSensor.heartRate</code>
+            </dd>
           </div>
-        </div>
-        <div class="system-flow" aria-hidden="true">
-          <i></i>
-          <i></i>
-          <i></i>
-        </div>
-        <div class="open-core">
-          <DigitsMark compact />
-          <span class="core-label">Practical interoperability</span>
-          <strong>Map · profile · validate</strong>
-          <small>Building on established standards</small>
-        </div>
-        <div class="system-flow flow-out" aria-hidden="true">
-          <i></i>
-          <i></i>
-          <i></i>
-        </div>
-        <p class="system-label system-label-out">Research-ready data out</p>
-        <div class="outcome-grid">
-          <span>Multi-site research</span>
-          <span>Multimodal AI</span>
-          <span>Agentic systems</span>
-          <span>Clinical evidence</span>
-        </div>
+          <div>
+            <dt>Oura</dt>
+            <dd>
+              <code>heartrate</code>
+            </dd>
+          </div>
+          <div class="mapping-result">
+            <dt>Shared meaning</dt>
+            <dd>
+              <strong>Heart rate</strong>
+              <span>LOINC 8867-4 · beats/min</span>
+            </dd>
+          </div>
+        </dl>
+        <p class="hero-example-note">
+          DIGITS develops the mappings, metadata, and validation needed to preserve meaning across
+          sources.
+        </p>
       </div>
     </div>
   </section>
@@ -141,17 +141,19 @@ const institutions = [
     <div class="container split-heading ai-heading">
       <div>
         <p class="eyebrow eyebrow-light">The shared data foundation</p>
-        <h2>Interoperability makes medical AI possible at scale.</h2>
+        <h2>Structured sensor data is foundational to medical AI.</h2>
       </div>
       <div>
         <p>
-          DIGITS aims to make sensor data comparable and traceable across devices, software
-          versions, and studies—helping researchers assemble larger longitudinal cohorts and
-          evaluate AI across real-world populations.
+          Models cannot reason reliably across longitudinal health data when equivalent signals
+          arrive with different names, units, sampling assumptions, quality indicators, and
+          provenance. DIGITS aims to make those signals comparable and traceable across devices,
+          software versions, and studies.
         </p>
         <p class="ai-caveat">
-          A shared data layer opens the door to multimodal models and agentic health applications
-          that can be developed, tested, and reproduced responsibly.
+          A shared data layer enables larger research cohorts and gives multimodal and agentic
+          systems consistent evidence that can be evaluated and reproduced across real-world
+          populations.
         </p>
       </div>
     </div>
@@ -182,9 +184,21 @@ const institutions = [
     </ol>
     <div class="container ai-outcomes" aria-label="Potential research outcomes">
       <span>Cross-device digital biomarkers</span>
+      <span>Time-series reasoning</span>
       <span>Generalizable multimodal models</span>
       <span>Reproducible agent evaluation</span>
-      <span>Privacy-aware real-world research</span>
+    </div>
+    <div class="container ai-connection">
+      <div>
+        <span class="panel-kicker">A complementary research direction</span>
+        <h3>From interoperable signals to time-series reasoning</h3>
+      </div>
+      <p>
+        Research such as <a href={siteConfig.references.openTSLM}>OpenTSLM</a> explores how language
+        models can reason over multivariate medical text and time-series data. DIGITS addresses a
+        prerequisite for that future: portable measurements with explicit meaning, quality, and
+        provenance across data sources.
+      </p>
     </div>
   </section>
 
@@ -324,47 +338,6 @@ const institutions = [
         </p>
       </div>
     </div>
-  </section>
-
-  <section class="support-section" aria-labelledby="support-title">
-    <div class="container split-heading section-heading support-heading">
-      <div>
-        <p class="eyebrow" id="support-title">
-          An expanding network
-        </p>
-        <h2>Support from across the wearable-data ecosystem.</h2>
-      </div>
-      <p class="body-large">
-        Leaders affiliated with these organizations provided letters of support for the original
-        grant submission. DIGITS is growing that early network into a broader consortium spanning
-        devices, platforms, research, healthcare, standards, advocacy, and publishing.
-      </p>
-    </div>
-    <div
-      class="support-rail"
-      role="region"
-      aria-label="Organizations affiliated with initial letter writers"
-    >
-      <div class="support-track">
-        {supportOrganizations.map((organization) => (
-          <span class:list={{ 'support-logo': true, compact: organization.compact }}>
-            <img src={withBase(organization.logo)} alt={organization.name} loading="eager" />
-          </span>
-        ))}
-        {supportOrganizations.map((organization) => (
-          <span
-            class:list={{ 'support-logo': true, compact: organization.compact }}
-            aria-hidden="true"
-          >
-            <img src={withBase(organization.logo)} alt="" loading="eager" />
-          </span>
-        ))}
-      </div>
-    </div>
-    <p class="container support-disclaimer">
-      Affiliations reflect the letter writers identified in the funded proposal. New academic,
-      industry, standards, and community partners are invited to join and broaden the consortium.
-    </p>
   </section>
 
   <section id="timeline" class="section timeline-section">

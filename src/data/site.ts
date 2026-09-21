@@ -153,18 +153,3 @@ export const timeline = [
     engagement: 'Adopt, teach, and extend',
   },
 ] as const;
-
-export const supportOrganizations = [
-  { name: 'Apple', logo: '/images/supporters/apple.svg', compact: true },
-  { name: 'Google', logo: '/images/supporters/google.svg', compact: true },
-  { name: 'Samsung', logo: '/images/supporters/samsung.svg', compact: false },
-  { name: 'Microsoft', logo: '/images/supporters/microsoft.svg', compact: false },
-  { name: 'Google DeepMind', logo: '/images/supporters/google-deepmind.svg', compact: false },
-  { name: 'Verily', logo: '/images/supporters/verily.svg', compact: false },
-  {
-    name: 'Johnson & Johnson Innovative Medicine',
-    logo: '/images/supporters/johnson-johnson.svg',
-    compact: false,
-  },
-  { name: 'Fitabase', logo: '/images/supporters/fitabase.svg', compact: false },
-] as const;

@@ -24,6 +24,16 @@ export const GET: APIRoute = () =>
             description: siteConfig.description,
             positioning:
               'DIGITS builds on and connects existing standards rather than creating an isolated competing standard.',
+            aiRelevance:
+              'DIGITS makes longitudinal sensor measurements comparable and traceable so multimodal and agentic systems can be evaluated across devices, studies, and populations.',
+            relatedResearch: [
+              {
+                name: 'OpenTSLM',
+                url: siteConfig.references.openTSLM,
+                relationship:
+                  'An example of language-model research over multivariate medical text and time-series data that depends on well-structured longitudinal inputs.',
+              },
+            ],
             foundations,
             goals,
             leadership: leaders,

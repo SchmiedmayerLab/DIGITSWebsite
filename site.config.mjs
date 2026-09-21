@@ -29,6 +29,9 @@ export const siteConfig = {
     path: '/participate/',
     formUrl: 'https://schmiedmayer-lab.notion.site/ebd//3cc96f063cd480f8ac40fc91b55d0000',
   },
+  references: {
+    openTSLM: 'https://opentslm.com',
+  },
   social: [
     {
       name: 'LinkedIn',

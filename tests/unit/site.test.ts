@@ -10,7 +10,6 @@ import {
   governanceGroups,
   leaders,
   participation,
-  supportOrganizations,
   timeline,
 } from '../../src/data/site';
 import { absoluteUrl, withBase } from '../../src/lib/paths';
@@ -31,7 +30,6 @@ describe('DIGITS landing-page content', () => {
     ]);
     expect(participation).toHaveLength(4);
     expect(governanceGroups).toHaveLength(4);
-    expect(supportOrganizations.length).toBeGreaterThanOrEqual(8);
   });
 
   it('frames existing standards as foundations for AI-ready interoperability', () => {
@@ -57,6 +55,10 @@ describe('deployment paths', () => {
   it('keeps participation routing and the external form centrally configured', () => {
     expect(withBase(siteConfig.participation.path)).toBe('/participate/');
     expect(new URL(siteConfig.participation.formUrl).hostname).toBe('schmiedmayer-lab.notion.site');
+  });
+
+  it('links to the canonical OpenTSLM research site', () => {
+    expect(siteConfig.references.openTSLM).toBe('https://opentslm.com');
   });
 
   it('defines a concise reusable verbal identity', () => {
