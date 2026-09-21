@@ -590,7 +590,9 @@
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    background: var(--partner-logo-surface);
+    padding: 0.85rem 1rem;
+    background: var(--partner-logo-surface-solid);
+    border: 1px solid var(--line);
     border-radius: var(--radius-sm);
     text-decoration: none;
   }
@@ -1598,14 +1600,15 @@
   .institution-lockup {
     min-height: 4rem;
     justify-content: center;
-    opacity: 0.74;
     transition:
-      opacity 160ms ease,
+      border-color 160ms ease,
+      box-shadow 160ms ease,
       transform 160ms ease;
   }
 
   .institution-lockup:hover {
-    opacity: 1;
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow-sm);
     transform: translateY(-2px);
   }
 
@@ -1623,12 +1626,6 @@
 
   .institution-lockup:nth-child(2) img {
     height: 3.5rem;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .institution-lockup img {
-      filter: grayscale(1) brightness(0) invert(1);
-    }
   }
 
   .ai-section {
@@ -1802,21 +1799,6 @@
     border-top: 1px solid var(--line);
     font-size: 0.76rem;
     font-weight: 760;
-  }
-
-  .participation-grid article:first-child {
-    color: var(--text-inverse);
-    background: var(--surface-inverse);
-    border-color: transparent;
-  }
-
-  .participation-grid article:first-child p {
-    color: rgb(var(--text-inverse-rgb) / 76%);
-  }
-
-  .participation-grid article:first-child > span,
-  .participation-grid article:first-child > strong {
-    color: var(--accent-on-dark);
   }
 
   .contact-panel {
