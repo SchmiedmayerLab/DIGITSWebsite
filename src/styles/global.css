@@ -783,7 +783,7 @@
 
   .ai-pipeline li {
     position: relative;
-    min-height: 13rem;
+    min-height: 11rem;
     padding: 1.5rem;
     background: rgb(var(--text-inverse-rgb) / 6%);
     border: 1px solid var(--line-dark);
@@ -816,16 +816,8 @@
     transform: translateY(-50%);
   }
 
-  .ai-pipeline li > span {
-    color: var(--mint);
-    font-size: 0.7rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-  }
-
   .ai-pipeline strong {
     display: block;
-    margin-top: 2.2rem;
     font-size: 1.4rem;
   }
 
@@ -896,17 +888,10 @@
   .goal-card {
     display: grid;
     padding-block: 1.55rem;
-    grid-template-columns: 4.5rem minmax(14rem, 0.75fr) minmax(18rem, 1fr);
+    grid-template-columns: minmax(14rem, 0.75fr) minmax(18rem, 1fr);
     gap: clamp(1.5rem, 4vw, 4rem);
     align-items: center;
     border-bottom: 1px solid var(--line);
-  }
-
-  .goal-number {
-    color: var(--mint-dark);
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.15em;
   }
 
   .goal-verb {
@@ -1292,7 +1277,7 @@
   }
 
   .participation-grid article {
-    min-height: 22rem;
+    min-height: 19rem;
     display: flex;
     padding: 1.4rem;
     flex-direction: column;
@@ -1301,15 +1286,7 @@
     border-radius: var(--radius);
   }
 
-  .participation-grid article > span {
-    color: var(--blue);
-    font-size: 0.68rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-  }
-
   .participation-grid h3 {
-    margin-top: 2.2rem;
     font-size: 1.24rem;
   }
 
@@ -1905,11 +1882,7 @@
     }
 
     .goal-card {
-      grid-template-columns: 3rem minmax(0, 1fr);
-    }
-
-    .goal-card > p {
-      grid-column: 2;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
     }
 
     .governance-board,
@@ -2156,8 +2129,8 @@
 
     .goal-card {
       padding-block: 1.5rem;
-      grid-template-columns: 2.2rem minmax(0, 1fr);
-      gap: 1rem;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
     }
 
     .goal-card > p {

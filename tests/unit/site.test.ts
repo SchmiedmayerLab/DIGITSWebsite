@@ -18,8 +18,13 @@ import { siteConfig } from '../../site.config.mjs';
 describe('DIGITS landing-page content', () => {
   it('represents all five funded goals in a stable order', () => {
     expect(goals).toHaveLength(5);
-    expect(goals.map((goal) => goal.number)).toEqual(['01', '02', '03', '04', '05']);
-    expect(new Set(goals.map((goal) => goal.verb)).size).toBe(5);
+    expect(goals.map((goal) => goal.verb)).toEqual([
+      'Convene',
+      'Assess',
+      'Bridge',
+      'Validate',
+      'Adopt',
+    ]);
   });
 
   it('keeps leadership and participation perspectives multidisciplinary', () => {
@@ -35,7 +40,7 @@ describe('DIGITS landing-page content', () => {
   it('frames existing standards as foundations for AI-ready interoperability', () => {
     expect(foundations).toContain('HL7 FHIR');
     expect(foundations).toContain('Open mHealth');
-    expect(aiPipeline.at(-1)?.label).toBe('Learn');
+    expect(aiPipeline.at(-1)?.label).toBe('Analyze');
     expect(timeline.map((phase) => phase.period)).toEqual(['Year 1', 'Year 2', 'Year 3', 'Year 4']);
   });
 });

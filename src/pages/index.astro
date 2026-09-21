@@ -68,9 +68,9 @@ const institutions = [
           </a>
         </div>
         <ul class="hero-principles" role="list" aria-label="DIGITS principles">
-          <li>Build on existing standards</li>
-          <li>Co-designed across sectors</li>
-          <li>Validated in practice</li>
+          <li>Use existing standards</li>
+          <li>Include research and industry</li>
+          <li>Validate across devices</li>
         </ul>
       </div>
 
@@ -112,7 +112,7 @@ const institutions = [
           <i></i>
           <i></i>
         </div>
-        <p class="system-label system-label-out">Consistent research data out</p>
+        <p class="system-label system-label-out">Comparable research data</p>
         <div class="outcome-grid">
           <span>Shared semantics</span>
           <span>Units + time</span>
@@ -175,9 +175,8 @@ const institutions = [
       </p>
     </div>
     <ol class="container ai-pipeline">
-      {aiPipeline.map((stage, index) => (
+      {aiPipeline.map((stage) => (
         <li>
-          <span>{String(index + 1).padStart(2, '0')}</span>
           <strong>{stage.label}</strong>
           <p>{stage.detail}</p>
         </li>
@@ -191,13 +190,13 @@ const institutions = [
     </div>
     <div class="container ai-connection">
       <div>
-        <span class="panel-kicker">A complementary research direction</span>
+        <span class="panel-kicker">Related research</span>
         <h3>From interoperable signals to time-series reasoning</h3>
       </div>
       <p>
         Research such as <a href={siteConfig.references.openTSLM}>OpenTSLM</a> explores how language
-        models can reason over multivariate medical text and time-series data. DIGITS addresses a
-        prerequisite for that future: portable measurements with explicit meaning, quality, and
+        models can reason over multivariate medical text and time-series data. DIGITS addresses a a
+        prerequisite for this work: portable measurements with explicit meaning, quality, and
         provenance across data sources.
       </p>
     </div>
@@ -207,8 +206,8 @@ const institutions = [
     <div class="container">
       <div class="split-heading section-heading">
         <div>
-          <p class="eyebrow eyebrow-light">Five connected goals</p>
-          <h2>Turn existing standards into shared research infrastructure.</h2>
+          <p class="eyebrow eyebrow-light">Scope of work</p>
+          <h2>Make existing standards practical for research.</h2>
         </div>
         <p class="body-large">
           DIGITS is supported by the National Institute of Mental Health through the NIH initiative{' '}
@@ -222,7 +221,6 @@ const institutions = [
       <div class="goal-list">
         {goals.map((goal) => (
           <article class="goal-card">
-            <span class="goal-number">{goal.number}</span>
             <div>
               <>
                 <span class="goal-verb">{goal.verb}</span>
@@ -240,7 +238,7 @@ const institutions = [
     <div class="container split-heading section-heading governance-heading">
       <div>
         <p class="eyebrow">How the consortium is organized</p>
-        <h2>Decisions shaped by clinical, technical, industry, and community expertise.</h2>
+        <h2>One structure for technical work, oversight, and decisions.</h2>
       </div>
       <p class="body-large">
         The proposed structure combines accountable leadership, independent ethical review, a
@@ -290,7 +288,7 @@ const institutions = [
       <div class="split-heading section-heading">
         <div>
           <p class="eyebrow eyebrow-light">Founding leadership</p>
-          <h2>Clinical, informatics, and industry leaders working as one team.</h2>
+          <h2>Co-chairs from clinical care, informatics, and device technology.</h2>
         </div>
         <p class="body-large">
           The founding co-chairs connect clinical priorities, implementation expertise, and the
@@ -345,7 +343,7 @@ const institutions = [
     <div class="container split-heading section-heading timeline-heading">
       <div>
         <p class="eyebrow">Four-year workplan</p>
-        <h2>A path from shared needs to sustained adoption.</h2>
+        <h2>Four years from priority setting to long-term stewardship.</h2>
       </div>
       <p class="body-large">
         Each phase creates a concrete opportunity for academic and industry partners to shape,
@@ -372,19 +370,18 @@ const institutions = [
     <div class="container split-heading section-heading participate-header">
       <div>
         <p class="eyebrow">Join DIGITS</p>
-        <h2>Shape the data foundation for the next generation of digital health and AI.</h2>
+        <h2>Help make wearable and sensor data usable across research systems.</h2>
       </div>
       <p class="body-large">
         Early members will help set implementation priorities and establish the adapter patterns,
-        validation methods, and governance that future studies and platforms can build on. We are
+        validation methods, and governance that studies and platforms can build on. We are
         especially seeking device and platform teams ready to make their systems easier to use in
         rigorous, large-scale medical research.
       </p>
     </div>
     <div class="container participation-grid">
-      {participation.map((item, index) => (
+      {participation.map((item) => (
         <article>
-          <span>{String(index + 1).padStart(2, '0')}</span>
           <h3>{item.audience}</h3>
           <p>{item.description}</p>
           <strong>{item.action}</strong>
@@ -393,12 +390,11 @@ const institutions = [
     </div>
     <div class="container contact-panel">
       <div>
-        <span class="panel-kicker">Join early</span>
-        <h3>Help define how the ecosystem connects.</h3>
+        <span class="panel-kicker">Founding participation</span>
+        <h3>Contribute to the first implementation priorities.</h3>
         <p>
-          Founding participants can influence the first use cases and implementation patterns—and
-          contribute the adapters that make their devices, platforms, and research workflows part of
-          an interoperable future.
+          Participants can help select initial use cases, review profiles and validation methods,
+          test implementations, or build adapters for their systems.
         </p>
       </div>
       <a class="button button-light" href={withBase(siteConfig.participation.path)}>
