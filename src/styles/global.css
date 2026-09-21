@@ -1598,7 +1598,7 @@
   }
 
   .institution-lockup {
-    min-height: 4rem;
+    height: 5.5rem;
     justify-content: center;
     transition:
       border-color 160ms ease,
