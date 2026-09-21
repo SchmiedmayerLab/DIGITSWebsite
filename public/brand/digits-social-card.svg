@@ -38,7 +38,7 @@ SPDX-License-Identifier: LicenseRef-DIGITS-Brand
         <text x="176" y="109" fill="#172533" font-size="42" font-weight="740" letter-spacing="9">DIGITS</text>
         <text x="78" y="288" fill="#172533" font-size="78" font-weight="690" letter-spacing="-2">Wearable data</text>
         <text x="78" y="370" fill="#172533" font-size="78" font-weight="690" letter-spacing="-2">that works together.</text>
-        <text x="82" y="460" fill="#52616d" font-size="31" font-weight="520">Practical interoperability for sensor data, research, and AI.</text>
+        <text x="82" y="460" fill="#52616d" font-size="31" font-weight="520">Practical interoperability for mobile health data, research, and AI.</text>
         <path d="M82 510h520" stroke="#a51c30" stroke-width="6" stroke-linecap="round"/>
         <g opacity="0.14"><g transform="translate(835 165) scale(6.25)">
     <g fill="#172533">

@@ -20,10 +20,20 @@ export const GET: APIRoute = () =>
           {
             id: absoluteUrl('/'),
             type: 'ResearchProject',
-            title: 'DIGITS consortium for interoperable sensor data, research, and AI',
+            title: 'DIGITS consortium for interoperable mobile health data, research, and AI',
             description: siteConfig.description,
             positioning:
               'DIGITS builds on and connects existing standards rather than creating an isolated competing standard.',
+            aiRelevance:
+              'DIGITS makes longitudinal sensor measurements comparable and traceable so multimodal and agentic systems can be evaluated across devices, studies, and populations.',
+            relatedResearch: [
+              {
+                name: 'OpenTSLM',
+                url: siteConfig.references.openTSLM,
+                relationship:
+                  'An example of language-model research over multivariate medical text and time-series data that depends on well-structured longitudinal inputs.',
+              },
+            ],
             foundations,
             goals,
             leadership: leaders,
@@ -37,7 +47,7 @@ export const GET: APIRoute = () =>
             type: 'WebPage',
             title: 'Participate in DIGITS',
             description:
-              'Connect with DIGITS and help shape practical interoperability for wearable and sensor data in research and AI.',
+              'Connect with DIGITS and help shape practical interoperability for mobile health data in research and AI.',
             isPartOf: absoluteUrl('/'),
           },
         ],

@@ -21,7 +21,7 @@ interface Props {
 const { title, description = siteConfig.description, noindex = false, canonicalPath } = Astro.props;
 const pageTitle = title
   ? `${title} · ${siteConfig.name}`
-  : `${siteConfig.name} · Interoperable sensor data for research and AI`;
+  : `${siteConfig.name} · Interoperable mobile health data for research and AI`;
 const canonical = new URL(
   canonicalPath ? withBase(canonicalPath) : Astro.url.pathname,
   Astro.site ?? siteConfig.url,

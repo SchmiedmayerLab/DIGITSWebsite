@@ -32,7 +32,6 @@ for (const path of ['/', '/participate/', '/404.html']) {
     const overflow = await page.locator('body').evaluate(() =>
       [...document.querySelectorAll<HTMLElement>('body *')]
         .filter((element) => {
-          if (element.closest('.support-rail')) return false;
           const box = element.getBoundingClientRect();
           return box.right > document.documentElement.clientWidth + 1 || box.left < -1;
         })
@@ -142,17 +141,28 @@ test('appearance and browser chrome follow the system color scheme', async ({ pa
   );
   await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', /favicon\.svg$/);
   await expect(page.locator('[data-theme-toggle]')).toHaveCount(0);
-  expect(
-    await page.locator('.open-core').evaluate((element) => getComputedStyle(element).color),
-  ).toBe('rgb(255, 255, 255)');
+  await expect(page.locator('.hero-system')).toBeVisible();
 
   await page.emulateMedia({ colorScheme: 'light' });
   expect(
     await page.locator('html').evaluate((element) => getComputedStyle(element).colorScheme),
   ).toBe('light');
-  expect(
-    await page.locator('.open-core').evaluate((element) => getComputedStyle(element).color),
-  ).toBe('rgb(23, 37, 51)');
+  await expect(page.locator('.hero-system')).toBeVisible();
+});
+
+test('the landing page explains AI relevance without company-logo promotion', async ({ page }) => {
+  await page.goto(route('/'));
+  await expect(
+    page.getByRole('heading', { name: /structured, traceable measurements/i }),
+  ).toBeVisible();
+  await expect(page.locator('.hero-system')).toContainText('Raw signals');
+  await expect(page.locator('.hero-system')).toContainText('Patient reports');
+  await expect(page.locator('.hero-system')).toContainText('Quality + provenance');
+  await expect(page.getByRole('link', { name: /OpenTSLM paper on arXiv/i })).toHaveAttribute(
+    'href',
+    siteConfig.references.openTSLM,
+  );
+  await expect(page.locator('img[src*="/images/supporters/"]')).toHaveCount(0);
 });
 
 test('social previews use the generated large-format DIGITS card', async ({ page }) => {

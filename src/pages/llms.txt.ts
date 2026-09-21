@@ -17,7 +17,11 @@ DIGITS stands for DIGital health Interoperability Technology Standards. OpenDIGI
 
 ## Overview
 
-DIGITS is an NIMH/NIH-supported consortium building practical interoperability for smartphone, wearable, and sensor data in research. It connects and extends established foundations such as HL7 FHIR, Open mHealth, IEEE, OMOP, and clinical terminologies rather than creating another competing standard. The work combines cross-sector governance, mappings, adapters, validation tools, multi-device research evaluation, adoption support, and long-term stewardship. This shared data layer enables larger longitudinal datasets and reproducible multimodal AI and agentic health applications.
+DIGITS is an NIMH/NIH-supported consortium building practical interoperability for mobile health data in research. It connects and extends established foundations such as HL7 FHIR, Open mHealth, IEEE, OMOP, and clinical terminologies rather than creating another competing standard. The work combines cross-sector governance, mappings, adapters, validation tools, multi-device research evaluation, adoption support, and long-term stewardship. This shared data layer enables larger longitudinal datasets and reproducible multimodal AI and agentic health applications.
+
+## AI and time-series research
+
+Medical AI systems need measurements with consistent meaning, units, quality indicators, and provenance across data sources. DIGITS develops this interoperable data foundation. Related research such as [OpenTSLM](${siteConfig.references.openTSLM}) explores language-model reasoning over multivariate medical text and time-series data and illustrates why structured longitudinal inputs matter.
 
 ## Participation
 

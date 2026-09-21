@@ -13,37 +13,32 @@ export const foundations = [
 
 export const goals = [
   {
-    number: '01',
     verb: 'Convene',
-    title: 'Build the consortium together',
+    title: 'Establish the consortium',
     description:
       'Bring researchers, clinicians, device manufacturers, standards experts, regulators, and people with lived experience into a practical, transparent process.',
   },
   {
-    number: '02',
     verb: 'Assess',
-    title: 'Start with what already exists',
+    title: 'Assess existing standards and formats',
     description:
       'Evaluate FHIR, Open mHealth, IEEE, OMOP, established terminologies, and manufacturer formats to identify practical adoption gaps—not create another isolated standard.',
   },
   {
-    number: '03',
     verb: 'Bridge',
-    title: 'Make implementation practical',
+    title: 'Publish profiles, mappings, and tools',
     description:
       'Define focused data and metadata profiles, mappings, reference implementations, documentation, and automated validation tools that research teams can use.',
   },
   {
-    number: '04',
     verb: 'Validate',
     title: 'Test across real devices and platforms',
     description:
       'Evaluate whether shared representations preserve meaning across wearable and smartphone platforms and support reliable cross-device analysis.',
   },
   {
-    number: '05',
     verb: 'Adopt',
-    title: 'Create a durable path to adoption',
+    title: 'Support adoption and stewardship',
     description:
       'Work with manufacturers and researchers on voluntary implementation, public training, versioned releases, and long-term community stewardship.',
   },
@@ -53,7 +48,7 @@ export const aiPipeline = [
   { label: 'Collect', detail: 'Wearables, phones, and connected sensors' },
   { label: 'Interpret', detail: 'Portable data, metadata, quality, and provenance' },
   { label: 'Combine', detail: 'Multi-site cohorts and longitudinal evidence' },
-  { label: 'Learn', detail: 'Multimodal models and agentic research systems' },
+  { label: 'Analyze', detail: 'Multimodal models and agentic research systems' },
 ] as const;
 
 export const leaders = [
@@ -100,7 +95,7 @@ export const participation = [
   {
     audience: 'Device and platform teams',
     description:
-      'Build and validate adapters to your systems, help set feasible implementation priorities, and make your platform ready for the next generation of research.',
+      'Build and validate adapters to your systems, help set feasible implementation priorities, and make your platform usable in multi-site research.',
     action: 'Contribute an adapter or implementation',
   },
   {
@@ -152,19 +147,4 @@ export const timeline = [
       'Grow implementation support, training, conformance tooling, and a durable community process connected to established standards bodies.',
     engagement: 'Adopt, teach, and extend',
   },
-] as const;
-
-export const supportOrganizations = [
-  { name: 'Apple', logo: '/images/supporters/apple.svg', compact: true },
-  { name: 'Google', logo: '/images/supporters/google.svg', compact: true },
-  { name: 'Samsung', logo: '/images/supporters/samsung.svg', compact: false },
-  { name: 'Microsoft', logo: '/images/supporters/microsoft.svg', compact: false },
-  { name: 'Google DeepMind', logo: '/images/supporters/google-deepmind.svg', compact: false },
-  { name: 'Verily', logo: '/images/supporters/verily.svg', compact: false },
-  {
-    name: 'Johnson & Johnson Innovative Medicine',
-    logo: '/images/supporters/johnson-johnson.svg',
-    compact: false,
-  },
-  { name: 'Fitabase', logo: '/images/supporters/fitabase.svg', compact: false },
 ] as const;

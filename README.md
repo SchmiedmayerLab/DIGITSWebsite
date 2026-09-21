@@ -18,7 +18,7 @@ SPDX-License-Identifier: MIT
 
 ![DIGITS — Wearable data that works together.](public/brand/digits-bluesky-banner.png)
 
-DIGITS is an NIH-funded consortium making smartphone, wearable, and sensor data interoperable across devices, platforms, and studies for research and responsible AI.
+DIGITS is an NIH-funded consortium making mobile health data interoperable across devices, platforms, and studies for research and responsible AI.
 
 ## Tooling
 
@@ -62,7 +62,7 @@ GitHub Pages builds automatically from `main`. The workflow reads the active Pag
 | Path                 | Purpose                                                              |
 | -------------------- | -------------------------------------------------------------------- |
 | `site.config.mjs`    | Identity, URLs, social profiles, participation, and discovery policy |
-| `src/data/site.ts`   | Goals, governance, leadership, supporters, and timeline              |
+| `src/data/site.ts`   | Goals, governance, leadership, participation, and timeline           |
 | `src/pages/`         | Landing, participation, discovery, and error routes                  |
 | `src/styles/`        | Central design tokens and responsive component styling               |
 | `public/brand/`      | Committed SVG and PNG identity assets                                |
