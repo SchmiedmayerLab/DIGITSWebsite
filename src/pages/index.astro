@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 import BaseLayout from '../layouts/BaseLayout.astro';
+import DigitsMark from '../components/DigitsMark.astro';
 import {
   aiPipeline,
   foundations,
@@ -18,27 +19,27 @@ import { siteConfig } from '../../site.config.mjs';
 const institutions = [
   {
     name: 'Beth Israel Deaconess Medical Center',
-    href: 'https://www.bidmc.org/',
+    href: 'https://brain.harvard.edu/?people=john-torous',
     logo: '/images/institutions/bidmc.svg',
   },
   {
     name: 'Harvard University',
-    href: 'https://www.harvard.edu/',
+    href: 'https://brain.harvard.edu/?people=john-torous',
     logo: '/images/institutions/harvard.svg',
   },
   {
     name: 'Stanford University',
-    href: 'https://www.stanford.edu/',
+    href: 'https://profiles.stanford.edu/schmiedmayer',
     logo: '/images/institutions/stanford-university.svg',
   },
   {
     name: 'Stanford Medicine',
-    href: 'https://med.stanford.edu/',
+    href: 'https://profiles.stanford.edu/schmiedmayer',
     logo: '/images/institutions/stanford-medicine.svg',
   },
   {
     name: 'American Psychiatric Association',
-    href: 'https://www.psychiatry.org/',
+    href: 'https://www.psychiatry.org/about-apa/meet-our-organization/councils/digital-health-innovation-and-technology',
     logo: '/images/institutions/apa.svg',
   },
 ] as const;
@@ -74,50 +75,50 @@ const institutions = [
       </div>
 
       <div
-        class="hero-example"
-        aria-label="The same heart rate measurement as named by four data platforms"
+        class="hero-system"
+        aria-label="Example source data flow through the DIGITS interoperability layer into consistent research data"
       >
-        <div class="hero-example-heading">
-          <span>One measurement</span>
-          <strong>Heart rate, four representations</strong>
+        <p class="system-label">Example source inputs</p>
+        <div class="signal-stack">
+          <div class="signal-card">
+            <span class="signal-pulse"></span>
+            <strong>HealthKit</strong>
+            <small>heart rate</small>
+          </div>
+          <div class="signal-card">
+            <span class="signal-pulse"></span>
+            <strong>Health Connect</strong>
+            <small>HeartRateRecord</small>
+          </div>
+          <div class="signal-card">
+            <span class="signal-pulse"></span>
+            <strong>Oura</strong>
+            <small>heartrate</small>
+          </div>
         </div>
-        <dl class="mapping-list">
-          <div>
-            <dt>Apple HealthKit</dt>
-            <dd>
-              <code>HKQuantityTypeIdentifierHeartRate</code>
-            </dd>
-          </div>
-          <div>
-            <dt>Android Health Connect</dt>
-            <dd>
-              <code>HeartRateRecord</code>
-            </dd>
-          </div>
-          <div>
-            <dt>Apple SensorKit</dt>
-            <dd>
-              <code>SRSensor.heartRate</code>
-            </dd>
-          </div>
-          <div>
-            <dt>Oura</dt>
-            <dd>
-              <code>heartrate</code>
-            </dd>
-          </div>
-          <div class="mapping-result">
-            <dt>Shared meaning</dt>
-            <dd>
-              <strong>Heart rate</strong>
-              <span>LOINC 8867-4 · beats/min</span>
-            </dd>
-          </div>
-        </dl>
-        <p class="hero-example-note">
-          DIGITS develops the mappings, metadata, and validation needed to preserve meaning across
-          sources.
-        </p>
+        <div class="system-flow" aria-hidden="true">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+        <div class="open-core">
+          <DigitsMark compact />
+          <span class="core-label">Practical interoperability</span>
+          <strong>Map · profile · validate</strong>
+          <small>Preserve meaning across data sources</small>
+        </div>
+        <div class="system-flow flow-out" aria-hidden="true">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+        <p class="system-label system-label-out">Consistent research data out</p>
+        <div class="outcome-grid">
+          <span>Shared semantics</span>
+          <span>Units + time</span>
+          <span>Quality + provenance</span>
+          <span>Research-ready series</span>
+        </div>
       </div>
     </div>
   </section>

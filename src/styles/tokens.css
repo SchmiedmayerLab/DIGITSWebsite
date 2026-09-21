@@ -46,7 +46,7 @@
     --hero-core-surface-end: #e4f2ef;
     --hero-core-text: var(--text-primary);
     --hero-core-muted: var(--text-secondary);
-    --hero-core-label: var(--accent);
+    --hero-core-label: var(--brand-primary-strong);
     --hero-core-mark: var(--brand-primary);
     --hero-core-plus: var(--accent);
     --hero-core-border: rgb(var(--brand-primary-rgb) / 16%);
@@ -132,7 +132,7 @@
       --hero-core-plus: var(--accent-bright);
       --hero-core-border: rgb(var(--text-inverse-rgb) / 12%);
       --hero-core-shadow: 0 0.9rem 2.5rem rgb(0 0 0 / 16%);
-      --partner-logo-surface: #f7f4ee;
+      --partner-logo-surface: transparent;
       --partner-logo-surface-solid: #f7f4ee;
       --border-subtle: #34434c;
       --border-inverse: rgb(255 255 255 / 16%);

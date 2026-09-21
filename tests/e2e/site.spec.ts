@@ -141,18 +141,20 @@ test('appearance and browser chrome follow the system color scheme', async ({ pa
   );
   await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', /favicon\.svg$/);
   await expect(page.locator('[data-theme-toggle]')).toHaveCount(0);
-  await expect(page.locator('.hero-example')).toBeVisible();
+  await expect(page.locator('.hero-system')).toBeVisible();
 
   await page.emulateMedia({ colorScheme: 'light' });
   expect(
     await page.locator('html').evaluate((element) => getComputedStyle(element).colorScheme),
   ).toBe('light');
-  await expect(page.locator('.hero-example')).toBeVisible();
+  await expect(page.locator('.hero-system')).toBeVisible();
 });
 
 test('the landing page explains AI relevance without company-logo promotion', async ({ page }) => {
   await page.goto(route('/'));
   await expect(page.getByRole('heading', { name: /structured sensor data/i })).toBeVisible();
+  await expect(page.locator('.hero-system')).toContainText('HeartRateRecord');
+  await expect(page.locator('.hero-system')).toContainText('Quality + provenance');
   await expect(page.getByRole('link', { name: 'OpenTSLM' })).toHaveAttribute(
     'href',
     siteConfig.references.openTSLM,

@@ -402,91 +402,169 @@
     font-weight: 650;
   }
 
-  .hero-example {
+  .hero-system {
     position: relative;
-    padding: clamp(1.35rem, 2.5vw, 2rem);
+    padding: clamp(1.2rem, 2.5vw, 2rem);
     background: var(--surface-raised);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     box-shadow: 0 1.25rem 4rem rgb(var(--shadow-rgb) / 9%);
   }
 
-  .hero-example-heading span,
-  .hero-example-heading strong {
-    display: block;
-  }
-
-  .hero-example-heading span {
-    color: var(--brand-text);
-    font-size: 0.7rem;
+  .system-label {
+    margin-bottom: 0.85rem;
+    color: var(--ink-muted);
+    font-size: 0.67rem;
     font-weight: 780;
     letter-spacing: 0.13em;
+    text-align: center;
     text-transform: uppercase;
   }
 
-  .hero-example-heading strong {
-    margin-top: 0.35rem;
-    font-size: clamp(1.25rem, 2vw, 1.65rem);
+  .system-label-out {
+    margin-block: -0.4rem 0.7rem;
   }
 
-  .mapping-list {
+  .signal-stack {
     display: grid;
-    margin-top: 1.2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.55rem;
   }
 
-  .mapping-list > div {
+  .signal-card {
     display: grid;
-    padding-block: 0.7rem;
-    grid-template-columns: minmax(8.5rem, 0.75fr) minmax(0, 1fr);
-    gap: 1rem;
-    align-items: baseline;
-    border-top: 1px solid var(--line);
-  }
-
-  .mapping-list dt {
-    color: var(--ink-soft);
-    font-size: 0.8rem;
-  }
-
-  .mapping-list dd {
     min-width: 0;
-    overflow-wrap: anywhere;
-    font-size: 0.82rem;
-  }
-
-  .mapping-list code {
-    font-family: ui-monospace, 'SF Mono', menlo, consolas, monospace;
-    font-size: 0.74rem;
-  }
-
-  .mapping-list .mapping-result {
-    margin-top: 0.35rem;
-    padding: 0.9rem;
-    color: var(--ink);
-    background: var(--accent-soft);
-    border-top: 0;
+    min-height: 5.2rem;
+    padding: 0.8rem 0.55rem;
+    place-content: center;
+    background: var(--paper);
+    border: 1px solid var(--line);
     border-radius: var(--radius-sm);
+    text-align: center;
   }
 
-  .mapping-result dt {
-    color: inherit;
-    font-weight: 760;
+  .signal-pulse {
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: 0 auto 0.5rem;
+    background: var(--mint);
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.2rem var(--mint-light);
   }
 
-  .mapping-result dd {
-    display: grid;
+  .signal-card strong,
+  .signal-card small {
+    display: block;
   }
 
-  .mapping-result span {
-    margin-top: 0.18rem;
-    color: var(--text-secondary);
-    font-size: 0.72rem;
+  .signal-card strong {
+    font-size: 0.76rem;
+    line-height: 1.1;
   }
 
-  .hero-example-note {
-    margin-top: 1rem;
+  .signal-card small {
+    margin-top: 0.25rem;
     color: var(--ink-muted);
-    font-size: 0.82rem;
+    font-size: 0.61rem;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .system-flow {
+    display: grid;
+    width: 70%;
+    height: 1.7rem;
+    margin-inline: auto;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .system-flow i {
+    position: relative;
+    border-bottom: 1px solid rgb(var(--brand-primary-rgb) / 30%);
+  }
+
+  .system-flow i::after {
+    position: absolute;
+    width: 1px;
+    height: 0.85rem;
+    bottom: -0.85rem;
+    left: 50%;
+    background: rgb(var(--brand-primary-rgb) / 30%);
+    content: '';
+  }
+
+  .open-core {
+    padding: 1.55rem;
+    color: var(--hero-core-text);
+    background: var(--hero-core-surface-start);
+    border: 1px solid var(--hero-core-border);
+    border-radius: var(--radius);
+    box-shadow: var(--hero-core-shadow);
+    text-align: center;
+  }
+
+  .open-core .brand {
+    justify-content: center;
+  }
+
+  .open-core .brand-mark rect {
+    fill: var(--hero-core-mark);
+  }
+
+  .open-core .brand-mark path {
+    stroke: var(--hero-core-plus);
+  }
+
+  .open-core .brand-copy strong {
+    color: var(--hero-core-text);
+  }
+
+  .core-label,
+  .open-core > strong,
+  .open-core > small {
+    display: block;
+  }
+
+  .core-label {
+    margin-top: 1rem;
+    color: var(--hero-core-label);
+    font-size: 0.65rem;
+    font-weight: 760;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .open-core > strong {
+    margin-top: 0.5rem;
+    font-size: clamp(1.35rem, 2.4vw, 2rem);
+    letter-spacing: -0.03em;
+  }
+
+  .open-core > small {
+    margin-top: 0.45rem;
+    color: var(--hero-core-muted);
+  }
+
+  .flow-out {
+    transform: rotate(180deg);
+  }
+
+  .outcome-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .outcome-grid span {
+    padding: 0.65rem 0.5rem;
+    color: var(--ink-soft);
+    background: var(--mint-light);
+    border-radius: 0.45rem;
+    font-size: 0.68rem;
+    font-weight: 720;
+    text-align: center;
   }
 
   /* Institution band */
@@ -1547,6 +1625,12 @@
     height: 3.5rem;
   }
 
+  @media (prefers-color-scheme: dark) {
+    .institution-lockup img {
+      filter: grayscale(1) brightness(0) invert(1);
+    }
+  }
+
   .ai-section {
     background: var(--surface-inverse);
   }
@@ -1615,7 +1699,8 @@
   .stewardship-card {
     grid-template-columns: minmax(10rem, 0.72fr) minmax(15rem, 0.9fr) minmax(18rem, 1.2fr);
     color: var(--text-inverse);
-    background: var(--brand-primary);
+    background: var(--surface-inverse-raised);
+    border: 1px solid var(--line-dark);
   }
 
   .stewardship-logo {
@@ -1721,7 +1806,7 @@
 
   .participation-grid article:first-child {
     color: var(--text-inverse);
-    background: var(--brand-primary);
+    background: var(--surface-inverse);
     border-color: transparent;
   }
 
@@ -1735,7 +1820,7 @@
   }
 
   .contact-panel {
-    background: var(--brand-primary);
+    background: var(--surface-inverse);
   }
   /* stylelint-enable no-duplicate-selectors */
 }
@@ -1812,7 +1897,7 @@
       padding-top: 0;
     }
 
-    .hero-example {
+    .hero-system {
       width: min(36rem, 100%);
       margin-inline: auto;
     }
@@ -2019,14 +2104,21 @@
       text-align: center;
     }
 
-    .hero-example {
+    .hero-system {
       padding: 0.85rem;
       border-radius: var(--radius);
     }
 
-    .mapping-list > div {
-      grid-template-columns: 1fr;
-      gap: 0.2rem;
+    .signal-card {
+      padding: 0.7rem 0.25rem;
+    }
+
+    .signal-card strong {
+      font-size: 0.68rem;
+    }
+
+    .open-core {
+      padding: 1.35rem 0.8rem;
     }
 
     .institution-grid,
