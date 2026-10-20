@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md)
 // SPDX-License-Identifier: MIT
 
+import ArrowIcon from '../components/ArrowIcon.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteConfig } from '../../site.config.mjs';
 ---
@@ -53,7 +54,7 @@ import { siteConfig } from '../../site.config.mjs';
       <p class="form-fallback">
         If the form does not appear, you can{' '}
         <a href={siteConfig.participation.formUrl} target="_blank" rel="noreferrer">
-          open it in a new window <span aria-hidden="true">↗</span>
+          open it in a new window <ArrowIcon direction="up-right" />
         </a>
         .
       </p>
