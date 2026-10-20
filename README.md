@@ -20,6 +20,8 @@ SPDX-License-Identifier: MIT
 
 DIGITS is an NIH-funded consortium making mobile health data interoperable across devices, platforms, and studies for research and responsible AI.
 
+The website is live at [opendigits.dev](https://opendigits.dev/).
+
 ## Tooling
 
 - Astro 7 and strict TypeScript for a static, low-JavaScript website.
