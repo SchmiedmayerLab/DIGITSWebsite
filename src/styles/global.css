@@ -290,7 +290,20 @@
     text-decoration: none;
   }
 
-  .text-link span {
+  .arrow-icon {
+    display: inline-block;
+    width: 0.85em;
+    height: 0.85em;
+    flex: none;
+    fill: none;
+    stroke: currentcolor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vertical-align: -0.08em;
+  }
+
+  .text-link .arrow-icon {
     color: var(--blue);
   }
 
@@ -388,18 +401,21 @@
     display: flex;
     margin-top: 2rem;
     flex-wrap: wrap;
-    gap: 0.55rem;
+    gap: 0.4rem 0;
+    color: var(--ink-soft);
+    font-size: 0.86rem;
+    font-weight: 620;
     list-style: none;
   }
 
   .hero-principles li {
-    padding: 0.44rem 0.72rem;
-    color: var(--ink-soft);
-    background: rgb(var(--surface-raised-rgb) / 74%);
-    border: 1px solid var(--line);
-    border-radius: 99rem;
-    font-size: 0.76rem;
-    font-weight: 650;
+    padding-inline: 0.9rem;
+    border-left: 1px solid var(--line);
+  }
+
+  .hero-principles li:first-child {
+    padding-left: 0;
+    border-left: 0;
   }
 
   .hero-system {
@@ -441,17 +457,6 @@
     border: 1px solid var(--line);
     border-radius: var(--radius-sm);
     text-align: center;
-  }
-
-  .signal-pulse {
-    display: block;
-    width: 0.5rem;
-    height: 0.5rem;
-    margin: 0 auto 0.5rem;
-    background: var(--mint);
-    border: 2px solid var(--white);
-    border-radius: 50%;
-    box-shadow: 0 0 0 0.2rem var(--mint-light);
   }
 
   .signal-card strong,
@@ -718,23 +723,10 @@
     display: grid;
     margin-top: 2rem;
     padding: clamp(1.4rem, 3vw, 2rem);
-    grid-template-columns: auto 1fr;
-    gap: 1.3rem;
+    grid-template-columns: 1fr;
     align-items: center;
     background: var(--blue-light);
     border-radius: var(--radius);
-  }
-
-  .position-mark {
-    width: 3rem;
-    height: 3rem;
-    display: grid;
-    place-items: center;
-    color: var(--text-inverse);
-    background: var(--blue);
-    border-radius: 50%;
-    font-size: 1.5rem;
-    font-weight: 800;
   }
 
   .position-statement p {
@@ -798,22 +790,31 @@
     border-radius: 0 var(--radius) var(--radius) 0;
   }
 
-  .ai-pipeline li:not(:last-child)::after {
+  /* The circle straddles the 2px seam where two card borders meet. */
+  .pipeline-arrow {
     position: absolute;
     z-index: 2;
     width: 1.8rem;
     height: 1.8rem;
     top: 50%;
-    right: -0.9rem;
+    right: -1px;
     display: grid;
     place-items: center;
     color: var(--text-on-accent);
     background: var(--mint);
     border: 0.3rem solid var(--surface-inverse);
     border-radius: 50%;
-    content: '›';
-    font-size: 1rem;
-    transform: translateY(-50%);
+    transform: translate(50%, -50%);
+  }
+
+  .pipeline-arrow svg {
+    width: 0.75rem;
+    height: 0.75rem;
+    fill: none;
+    stroke: currentcolor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 
   .ai-pipeline strong {
@@ -844,6 +845,9 @@
   }
 
   .ai-outcomes > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     color: var(--accent-on-dark);
     font-weight: 720;
     text-decoration: none;
@@ -907,6 +911,8 @@
   }
 
   .governance-map {
+    --governance-connector: rgb(var(--text-primary-rgb) / 30%);
+
     position: relative;
     padding: clamp(1rem, 3vw, 2.5rem);
     background: var(--white);
@@ -956,18 +962,43 @@
   }
 
   .governance-branch {
-    width: 1px;
+    width: 2px;
     height: 2rem;
     margin-inline: auto;
-    background: var(--line);
+    background: var(--governance-connector);
   }
 
   .governance-middle {
+    position: relative;
     display: grid;
     width: min(58rem, 86%);
     margin-inline: auto;
-    grid-template-columns: 0.65fr 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  /* Spine: continues the board's branch through the gap down to the working-group bar. */
+  .governance-middle::before {
+    position: absolute;
+    width: 2px;
+    top: 0;
+    bottom: -1rem;
+    left: 50%;
+    background: var(--governance-connector);
+    content: '';
+    transform: translateX(-50%);
+  }
+
+  /* Crossbar: joins both middle nodes to the spine. */
+  .governance-middle::after {
+    position: absolute;
+    height: 2px;
+    top: 50%;
+    right: calc(50% - 1.5rem);
+    left: calc(50% - 1.5rem);
+    background: var(--governance-connector);
+    content: '';
+    transform: translateY(-50%);
   }
 
   .advisory-node {
@@ -990,11 +1021,13 @@
 
   .governance-groups::before {
     position: absolute;
-    height: 1px;
+    height: 2px;
     top: -1rem;
-    right: 10%;
-    left: 10%;
-    background: var(--line);
+
+    /* Outer column centres of a four-column grid with a 0.8rem gap, minus half a stub. */
+    right: calc((100% - 2.4rem) / 8 - 1px);
+    left: calc((100% - 2.4rem) / 8 - 1px);
+    background: var(--governance-connector);
     content: '';
   }
 
@@ -1009,12 +1042,13 @@
 
   .governance-groups article::before {
     position: absolute;
-    width: 1px;
-    height: 1rem;
-    top: -1rem;
+    width: 2px;
+    height: calc(1rem + 1px);
+    top: calc(-1rem - 1px);
     left: 50%;
-    background: var(--line);
+    background: var(--governance-connector);
     content: '';
+    transform: translateX(-50%);
   }
 
   .governance-groups strong {
@@ -1107,6 +1141,7 @@
   .leader-card a {
     display: inline-flex;
     margin-top: 1rem;
+    align-items: center;
     gap: 0.35rem;
     color: var(--text-inverse);
     font-size: 0.8rem;
@@ -1114,7 +1149,7 @@
     text-decoration: none;
   }
 
-  .leader-card a span {
+  .leader-card a .arrow-icon {
     color: var(--mint);
   }
 
@@ -1323,6 +1358,23 @@
     padding-block: 3.2rem 1.4rem;
     color: var(--text-inverse);
     background: var(--surface-inverse);
+  }
+
+  .footer-brand-link {
+    display: inline-flex;
+    width: fit-content;
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 160ms ease;
+  }
+
+  .footer-brand-link:hover {
+    opacity: 0.8;
+  }
+
+  .footer-brand-link:focus-visible {
+    outline: 3px solid var(--accent-on-dark);
+    outline-offset: 4px;
   }
 
   .site-footer .brand-mark rect {
@@ -1632,10 +1684,6 @@
     border: 1px solid var(--line-dark);
   }
 
-  .position-statement-dark .position-mark {
-    background: var(--blue);
-  }
-
   .position-statement-dark p {
     color: rgb(var(--text-inverse-rgb) / 68%);
   }
@@ -1864,7 +1912,7 @@
       border-radius: var(--radius);
     }
 
-    .ai-pipeline li::after {
+    .pipeline-arrow {
       display: none;
     }
 
@@ -1884,6 +1932,10 @@
     .governance-groups::before,
     .governance-groups article::before {
       display: none;
+    }
+
+    .governance-middle::before {
+      bottom: 0;
     }
 
     .leader-grid {
@@ -2038,12 +2090,12 @@
 
     .hero-principles {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      gap: 0.3rem;
     }
 
-    .hero-principles li:first-child {
-      grid-column: 1 / -1;
-      text-align: center;
+    .hero-principles li {
+      padding-inline: 0;
+      border-left: 0;
     }
 
     .hero-system {
@@ -2126,6 +2178,17 @@
 
     .governance-map {
       padding: 0.75rem;
+    }
+
+    .governance-branch,
+    .governance-middle::before,
+    .governance-middle::after {
+      display: none;
+    }
+
+    .governance-middle {
+      margin-top: 0.8rem;
+      gap: 0.8rem;
     }
 
     .governance-board {
