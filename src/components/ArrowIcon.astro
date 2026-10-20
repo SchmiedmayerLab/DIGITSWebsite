@@ -1,0 +1,23 @@
+---
+// SPDX-FileCopyrightText: 2026 Schmiedmayer Lab and the project authors (see CONTRIBUTORS.md)
+// SPDX-License-Identifier: MIT
+
+// Drawn arrows replace text glyphs so they sit at the same height in every
+// browser and font, independent of glyph metrics.
+
+interface Props {
+  direction: 'down' | 'right' | 'up-right';
+}
+
+const paths = {
+  down: 'M8 2.5v11M3.5 9 8 13.5 12.5 9',
+  right: 'M2.5 8h11M9 3.5 13.5 8 9 12.5',
+  'up-right': 'M4.5 11.5 11.5 4.5M5.5 4.5h6v6',
+} as const;
+
+const { direction } = Astro.props;
+---
+
+<svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+  <path d={paths[direction]}></path>
+</svg>
