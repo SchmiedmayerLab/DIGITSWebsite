@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ArrowIcon from '../components/ArrowIcon.astro';
 import DigitsMark from '../components/DigitsMark.astro';
 import {
   aiPipeline,
@@ -46,7 +47,7 @@ const institutions = [
 ---
 
 <BaseLayout>
-  <section id="top" class="hero">
+  <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">
@@ -64,7 +65,7 @@ const institutions = [
             Join the consortium
           </a>
           <a class="text-link" href="#approach">
-            See the approach <span aria-hidden="true">↓</span>
+            See the approach <ArrowIcon direction="down" />
           </a>
         </div>
         <ul class="hero-principles" role="list" aria-label="DIGITS principles">
@@ -81,19 +82,16 @@ const institutions = [
         <p class="system-label">From sensing to interpreted measures</p>
         <div class="signal-stack">
           <div class="signal-card">
-            <span class="signal-pulse"></span>
             <strong>Raw signals</strong>
-            <small>PPG streams · accelerometry</small>
+            <small>PPG streams, accelerometry</small>
           </div>
           <div class="signal-card">
-            <span class="signal-pulse"></span>
             <strong>Device measures</strong>
-            <small>heart rate · sleep stages</small>
+            <small>heart rate, sleep stages</small>
           </div>
           <div class="signal-card">
-            <span class="signal-pulse"></span>
             <strong>Patient reports</strong>
-            <small>symptoms · validated scales</small>
+            <small>symptoms, validated scales</small>
           </div>
         </div>
         <div class="system-flow" aria-hidden="true">
@@ -104,7 +102,7 @@ const institutions = [
         <div class="open-core">
           <DigitsMark compact />
           <span class="core-label">Practical interoperability</span>
-          <strong>Map · profile · validate</strong>
+          <strong>Map, profile, validate</strong>
           <small>Preserve meaning across data sources</small>
         </div>
         <div class="system-flow flow-out" aria-hidden="true">
@@ -165,9 +163,6 @@ const institutions = [
       ))}
     </div>
     <div class="container position-statement position-statement-dark">
-      <span class="position-mark" aria-hidden="true">
-        ≠
-      </span>
       <p>
         <strong>DIGITS is not another competing standard.</strong> It connects and extends
         established foundations with the profiles, mappings, adapters, validation tools, and
@@ -175,10 +170,17 @@ const institutions = [
       </p>
     </div>
     <ol class="container ai-pipeline">
-      {aiPipeline.map((stage) => (
+      {aiPipeline.map((stage, index) => (
         <li>
           <strong>{stage.label}</strong>
           <p>{stage.detail}</p>
+          {index < aiPipeline.length - 1 && (
+            <span class="pipeline-arrow" aria-hidden="true">
+              <svg viewBox="0 0 16 16" focusable="false">
+                <path d="M6.25 3.5 10.75 8l-4.5 4.5"></path>
+              </svg>
+            </span>
+          )}
         </li>
       ))}
     </ol>
@@ -188,7 +190,7 @@ const institutions = [
         href={siteConfig.references.openTSLM}
         aria-label="OpenTSLM paper on arXiv: Time-series reasoning"
       >
-        Time-series reasoning <span aria-hidden="true">↗</span>
+        Time-series reasoning <ArrowIcon direction="up-right" />
       </a>
       <span>Generalizable multimodal models</span>
       <span>Reproducible agent evaluation</span>
@@ -242,7 +244,7 @@ const institutions = [
       <div class="governance-board governance-node">
         <span>Strategic leadership</span>
         <strong>Governance Board</strong>
-        <p>Clinical · informatics &amp; AI · industry co-chairs</p>
+        <p>Clinical, informatics &amp; AI, and industry co-chairs</p>
       </div>
       <div class="governance-branch" aria-hidden="true"></div>
       <div class="governance-middle">
@@ -305,7 +307,7 @@ const institutions = [
               <p>{leader.affiliation}</p>
               {leader.profile && (
                 <a href={leader.profile}>
-                  View profile <span aria-hidden="true">↗</span>
+                  View profile <ArrowIcon direction="up-right" />
                 </a>
               )}
             </div>
@@ -393,7 +395,7 @@ const institutions = [
         </p>
       </div>
       <a class="button button-light" href={withBase(siteConfig.participation.path)}>
-        Join the founding consortium <span aria-hidden="true">→</span>
+        Join the founding consortium <ArrowIcon direction="right" />
       </a>
     </div>
   </section>
